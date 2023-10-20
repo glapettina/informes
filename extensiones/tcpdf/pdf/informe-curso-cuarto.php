@@ -357,7 +357,7 @@ $pdf->writeHTML($bloque2, false, false, false, false, '');
 foreach ($respuestaInforme as $key => $value) {
 
 
-	if ($_GET["materia"] == "Análisis Matemática") {
+	if ($_GET["materia"] == "Análisis Matemático") {
 
 			$materia = "ANÁLISIS MATEMÁTICO";
 

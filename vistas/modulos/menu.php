@@ -377,7 +377,7 @@ if ($_SESSION["perfil"] == "Administrador" || $_SESSION["ciclo"] == "Superior El
 							  </a>
 						</li>
 						<li>
-							  <a href="#">
+							  <a href="42etv">
 							  <i class="fa fa-check-circle-o"></i>
 								  4to. 2da. E TV                         
 							  </a>

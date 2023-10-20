@@ -142,6 +142,7 @@
           $_GET["ruta"] == "32etv" ||     
           $_GET["ruta"] == "41atv" ||     
           $_GET["ruta"] == "41etv" ||     
+          $_GET["ruta"] == "42etv" ||     
           $_GET["ruta"] == "informe-area" ||
           $_GET["ruta"] == "informe-area-orientacion" ||
           $_GET["ruta"] == "salir") {
