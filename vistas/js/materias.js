@@ -60,67 +60,60 @@ $(document).on("click", ".btnEliminarMateria", function(){
 
 
 /*=============================================
-				ACTIVAR MATERIA            
+            ACTIVAR MATERIA            
 =============================================*/
 
-function Activar(){
 
-	console.log("Pasó");
-
-}
-
-$(document).on("click", "#btnActivarMaterias", function(){
-
-	
+$(document).on("click", ".btnActivarMateria", function(){
 
 
-	// var idCiudad = $(this).attr("idCiudad");
-	// var estadoCiudad = $(this).attr("estadoCiudad");
+	var idMateria = $(this).attr("idMateria");
+	var estadoMateria = $(this).attr("estadoMateria");
 
-	// var datos = new FormData();
-	// datos.append("activarId", idCiudad);
-	// datos.append("activarCiudad", estadoCiudad);
+	var datos = new FormData();
+	datos.append("activarId", idMateria);
+	datos.append("activarMateria", estadoMateria);
 
-	// $.ajax({
+	$.ajax({
 
-	// 	url: "ajax/ciudades.ajax.php",
-	// 	method: "POST",
-	// 	data: datos,
-	// 	cache: false,
-	// 	contentType: false,
-	// 	processData: false,
-	// 	success: function(respuesta){
+		url: "ajax/materias.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		success: function(respuesta){
 
-	// 		if (window.matchMedia("(max-width:767px)").matches) {
+			if (window.matchMedia("(max-width:767px)").matches) {
 
-	// 			swal({
-	// 				title: "La ciudad ha sido actualizada",
-	// 				type: "success",
-	// 				confirmButtonText: "Cerrar"
-	// 			}).then(function(result){
+				swal({
+					title: "La materia ha sido actualizada",
+					type: "success",
+					confirmButtonText: "Cerrar"
+				}).then(function(result){
 
-	// 				if (result.value) {
+					if (result.value) {
 
-	// 					window.location = "ciudades";
-	// 				}
-	// 			});
-	// 		}
-	// 	}
-	// })
+						window.location = "materias";
+					}
+				});
+			}
+		}
+	})
 
-	// if (estadoCiudad == 0) {
+	if (estadoMateria ==0) {
 
-	// 	$(this).removeClass('btn-success');
-	// 	$(this).addClass('btn-danger');
-	// 	$(this).html('Desactivado');
-	// 	$(this).attr('estadoCiudad', 1);
+		$(this).removeClass('btn-success');
+		$(this).addClass('btn-danger');
+		$(this).html('Desactivado');
+		$(this).attr('estadoMateria', 1);
 
-	// }else{
+	}else{
 
-	// 	$(this).addClass('btn-success');
-	// 	$(this).removeClass('btn-danger');
-	// 	$(this).html('Activado');
-	// 	$(this).attr('estadoCiudad', 0);
-	// }
+		$(this).addClass('btn-success');
+		$(this).removeClass('btn-danger');
+		$(this).html('Activado');
+		$(this).attr('estadoMateria', 0);
+	}
 })
 

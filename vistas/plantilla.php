@@ -187,6 +187,7 @@
 <script src="vistas/js/netbooks.js"></script>
 <script src="vistas/js/servicios.js"></script>
 <script src="vistas/js/informes.js"></script>
+<script src="vistas/js/materias.js"></script>
 
 
 <!--CAMPO FECHA - DATEPICKER-->

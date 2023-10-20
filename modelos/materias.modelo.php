@@ -40,7 +40,7 @@
 
 			if ($item != null) {
 				
-				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY nombre ASC");
 
 				$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -50,7 +50,7 @@
 
 			}else{
 
-				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY nombre ASC");
 
 				$stmt -> execute();
 
