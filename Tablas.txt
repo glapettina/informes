@@ -1,0 +1,25 @@
+Tabla menu
+
+
+Table menu_detalle
+
+mend_id	    perfil	usuario_id   curso_id     materia_id 	mend_permiso	estado	fecha		
+
+
+
+Trabajo Aúlico
+
+Bueno/Muy Bueno/Regular
+
+Comportamiento
+
+Bueno/Muy Bueno/Regular
+
+Evaluación
+
+Bueno/Muy Bueno/Regular
+
+Observaciones
+
+
+
