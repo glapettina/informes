@@ -279,7 +279,7 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
 
                       foreach ($materias as $key => $value) {
 
-                        echo '<option value="'.$value["id_materia"].'">'.$value["nombre"].' - '.$value["ciclo"].'</option>';
+                        echo '<option value="'.$value["id_materia"].'">'.$value["nombre"].'</option>';
                         
                       }
 

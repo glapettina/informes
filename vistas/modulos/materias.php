@@ -35,7 +35,6 @@
                 
                 <th style="width: 10px">#</th>
                 <th>Espacio Curricular</th>
-                <th>Ciclo</th>
                 <th>Estado</th>
                 <th>Acciones</th>
 
@@ -56,8 +55,7 @@
                     echo '<tr>
                 
                           <td>'.($key+1).'</td>
-                          <td>'.$value["nombre"].'</td>
-                          <td>'.$value["ciclo"].'</td>';
+                          <td>'.$value["nombre"].'</td>';
 
                           if ($value["estado"] != 0) {
                           
@@ -145,29 +143,6 @@
 
               </div>
 
-
-              <!-- ENTRADA PARA SELECCIONAR EL CICLO -->
-
-              <div class="form-group">
-                
-                <div class="input-group">
-                  
-                  <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                  
-                  <select class="form-control input-lg" name="nuevoCiclo">
-                    
-                    <option value="">Seleccionar Ciclo</option>
-                    <option value="Básico">Básico</option>
-                    <option value="Superior Alimentación">Superior Alimentación</option>
-                    <option value="Superior Electromecánica">Superior Electromecánica</option>
-
-
-                  </select>
-
-                </div>
-
-              </div>
-
             </div>
             
           </div>
@@ -248,24 +223,6 @@
 
               </div>  
 
-
-              <!-- ENTRADA PARA EL CICLO -->
-
-              <div class="form-group">
-                
-                <div class="input-group">
-              
-                   <span class="input-group-addon"><i class="fa fa-th"></i></span>
-              
-                   <select class="form-control input-lg" name="editarCiclo" readonly required>
-                
-                       <option id="editarCiclo"></option>                    
-                
-                   </select>
-
-            </div>
-
-          </div>
               
             </div>
             

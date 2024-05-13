@@ -210,4 +210,18 @@ class ControladorMenu{
 			}
 		}
 
+		/*=============================================
+						BUSCAR MENU DETALLE
+		=============================================*/
+
+		static public function ctrBuscarMenuDetalle($usuario){
+
+			$respuesta = ModeloMenu::mdlBuscarMenuDetalle($usuario);
+
+			return $respuesta;
+
+			//var_dump($respuesta);
+
+		}
+
 }

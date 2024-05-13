@@ -67,19 +67,41 @@ if ($_SESSION["perfil"] == "Docente") {
 
 	  echo'<li class="treeview">
 		  <a href="#">
-			  <i class="fa fa-graduation-cap"></i>  Ciclo Básico
+			  <i class="fa fa-graduation-cap"></i>  Cursos
 			  <i class="fa fa-angle-left pull-right"></i>
 		  </a>                            
 
-			<ul class="treeview-menu">
-				<li class="treeview">
-					<a href="#">
-						<i class="fa fa-circle-o"></i>
-						Primer Año
-						<i class="fa fa-angle-left pull-right"></i>
-					</a>
+			
+					
+					<ul class="treeview-menu">';
 
-					<ul class="treeview-menu">
+					$usuario = $_SESSION['id'];
+					$menuDetalle = ControladorMenu::ctrBuscarMenuDetalle($usuario);
+
+					//var_dump($menuDetalle);
+
+					foreach ($menuDetalle as $key => $value) {
+
+						echo '
+						<li class="treeview">
+						  <li>
+								<a href="'.$value["link"].'">
+								<i class="fa fa-check-circle-o"></i>
+								'.$value["menu"].'                          
+								</a>
+						  </li>
+						</li>  ';
+						  
+					}
+					  
+				echo '</li>
+			</ul>
+		</li>';
+
+					
+
+
+					/* echo '<ul class="treeview-menu">
 						<li class="treeview">
 						  <li>
 								<a href="11tm">
@@ -120,15 +142,17 @@ if ($_SESSION["perfil"] == "Docente") {
 					  </li>
 				  </li>
 			  </ul>
-			  </li>
-				<li class="treeview">
+			  </li>*/
+
+
+/* 				echo '<li class="treeview">
 					<a href="#">
 						<i class="fa fa-circle-o"></i>
 						Segundo Año
 						<i class="fa fa-angle-left pull-right"></i>
-					</a>
+					</a> 
 				
-				<ul class="treeview-menu">
+					<ul class="treeview-menu">
 					<li class="treeview">
 						<li>
 							  <a href="21tm">
@@ -160,17 +184,23 @@ if ($_SESSION["perfil"] == "Docente") {
 							  		2do. 2da. TT                         
 							  </a>
 						</li>
+						<li>
+							  <a href="23tt">
+							  <i class="fa fa-check-circle-o"></i>
+							  		2do. 3ra. TT                         
+							  </a>
+						</li>
 					</li>
 				</ul>
 				</li>
 				</li>
 				</ul>
-				</li>';
+				</li>'; */
 			}
 
 			?>
 
-<?php
+<!-- <?php
 
 if ($_SESSION["perfil"] == "Administrador" || $_SESSION["ciclo"] == "Superior Alimentación") {
 
@@ -399,7 +429,7 @@ if ($_SESSION["perfil"] == "Administrador" || $_SESSION["ciclo"] == "Superior El
  }
 
 ?>
-				
+ -->				
 
 		  </ul>   
  </li>

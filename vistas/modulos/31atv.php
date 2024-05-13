@@ -1,6 +1,13 @@
 <?php
   
-  $materia = $_SESSION["materia"];
+  $doc = $_SESSION["id"];
+  $ncurso = 20;
+                    
+  $mate = ControladorMaterias::ctrBuscarMateria($doc, $ncurso);
+
+  $ma = $mate["materia"];
+
+  //var_dump($doc);
 
     $item = null;
     $valor = null;   
@@ -15,12 +22,13 @@
     
     <section class="content-header">
       <h1>
-        3º Primera Alimentación - Turno Vespertino
+      
+      3º Primera Alimentación - Turno Vespertino - Materia: <?php echo $mate["materia"]; ?>
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">3º Primera Alimentación TV</li>
+        <li class="active">3º Primera A TV</li>
       </ol>
     </section>
 
@@ -30,22 +38,22 @@
       <!-- Default box -->
       <div class="box">
 
-        <?php
+              <?php
 
-          if ($_SESSION["perfil"] != "Preceptor") {
-            
-              echo '<div class="box-header with-border">                                      
+                  if ($_SESSION["perfil"] != "Preceptor") {
+                    
+                      echo '<div class="box-header with-border">                                      
 
-                <button class="btn btn-primary btnInformeQuinto" modalidad="superiora" materia="'.$_SESSION['materia'].'" ciclo="superiora" curso="quinto" periodo="'.$_SESSION['periodo'].'" idCurso=20 tabla="quinto" informe="informe-curso-quinto">
-                  
-                  Informes Curso
-                </button>
-                
-              </div>';
+                        <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="quinto" informe="informe-curso-primero">
+                          
+                          Informes Curso
+                        </button>
+                        
+                      </div>';
 
-          }
+                  }
 
-        ?>
+              ?> 
 
 
 
@@ -62,7 +70,6 @@
                 <th>Apellidos y Nombres</th>
                 <th>Curso</th>
                 <th>Turno</th>
-                <th>Orientación</th>
                 <th>Acciones</th>
 
               </tr> 
@@ -97,8 +104,7 @@
 
                           echo '<td>'.$curso["nombre"].'</td>  
 
-                          <td>'.$curso["turno"].'</td>
-                          <td>'.$value["modalidad"].'</td>';
+                          <td>'.$curso["turno"].'</td>';
 
 
                           echo '<td>';
@@ -109,7 +115,7 @@
                             
                             echo'<div class="btn-group">
 
-                              <button class="btn btn-warning btnEditarInformeQuinto" materia="'.$_SESSION["materia"].'" tabla="quinto" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-warning btnEditarInformePrimero"  tabla="quinto" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat="'.$ma.'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
 
   
                             </div>';
@@ -181,133 +187,316 @@
         <!-- ENTRADA PARA EL CONCEPTO --> 
 
               <?php
-                    
-                    $materia = $_SESSION["materia"];
 
-                    if ($materia == 'Comunicación Oral y Escrita') {
+                    $docente = $_SESSION["id"];
                     
-                      $concepto = 'conceptoComunicacion';
+                    $materia = ControladorMaterias::ctrBuscarMateria($docente, $ncurso);
+
+                    $mat = $materia["materia"];
+
+
+                    if ($mat == 'Análisis Matemático') {
+                    
+                      $aulico = 'aulicoAnalisis';
+                      $comportamiento = 'comportamientoAnalisis';
+                      $evaluacion = 'evaluacionAnalisis';
+                      $observa = 'observaAnalisis';
+
+                      $campo1 = 'aulico_analisis';
+                      $campo2 = 'comportamiento_analisis';
+                      $campo3 = 'evaluacion_analisis';
+                      $campo4 = 'observa_analisis';
+
+                    }          
+
+                    if ($mat == 'Cálculos de Elementos de Máquinas') {
+                    
+                      $aulico = 'aulicoCalculos';
+                      $comportamiento = 'comportamientoCalculos';
+                      $evaluacion = 'evaluacionCalculos';
+                      $observa = 'observaCalculos';
+
+                      $campo1 = 'aulico_calculos';
+                      $campo2 = 'comportamiento_calculos';
+                      $campo3 = 'evaluacion_calculos';
+                      $campo4 = 'observa_calculos';
+
+                    }
+
+                    if ($mat == 'Comunicación Oral y Escrita') {
+                    
+                      $aulico = 'aulicoComunicacion';
+                      $comportamiento = 'comportamientoComunicacion';
+                      $evaluacion = 'evaluacionComunicacion';
                       $observa = 'observaComunicacion';
 
-                      $campo1 = 'concepto_comunicacion';
-                      $campo2 = 'observa_comunicacion';
+                      $campo1 = 'aulico_comunicacion';
+                      $campo2 = 'comportamiento_comunicacion';
+                      $campo3 = 'evaluacion_comunicacion';
+                      $campo4 = 'observa_comunicacion';
 
-                    }          
-
-
-                    if ($materia == 'Diseños de Envases') {
+                    }
                     
-                      $concepto = 'conceptoEnvases';
-                      $observa = 'observaEnvases';
 
-                      $campo1 = 'concepto_envases';
-                      $campo2 = 'observa_envases';
-
-                    }          
-
-                    if ($materia == 'Educación Física') {
+                    if ($mat == 'Educación Física') {
                     
-                      $concepto = 'conceptoEdFisica';
+                      $aulico = 'aulicoEdFisica';
+                      $comportamiento = 'comportamientoEdFisica';
+                      $evaluacion = 'evaluacionEdFisica';
                       $observa = 'observaEdFisica';
 
-                      $campo1 = 'concepto_edfisica';
-                      $campo2 = 'observa_edfisica';
+                      $campo1 = 'aulico_edfisica';
+                      $campo2 = 'comportamiento_edfisica';
+                      $campo3 = 'evaluacion_edfisica';
+                      $campo4 = 'observa_edfisica';
 
                     } 
 
-
-
-                    if ($materia == 'Inglés Técnico') {
+                    if ($mat == 'Electrónica General') {
                     
-                      $concepto = 'conceptoIngles';
-                      $observa = 'observaIngles';
+                      $aulico = 'aulicoElectronica';
+                      $comportamiento = 'comportamientoElectronica';
+                      $evaluacion = 'evaluacionElectronica';
+                      $observa = 'observaElectronica';
 
-                      $campo1 = 'concepto_ingles';
-                      $campo2 = 'observa_ingles';
+                      $campo1 = 'aulico_electronica';
+                      $campo2 = 'comportamiento_electronica';
+                      $campo3 = 'evaluacion_electronica';
+                      $campo4 = 'observa_electronica';
 
                     } 
 
-                    if ($materia == 'Matemática Aplicada') {
+                    if ($mat == 'Electrotecnia') {
                     
-                      $concepto = 'conceptoMatematica';
-                      $observa = 'observaMatematica';
+                      $aulico = 'aulicoElectrotecnia';
+                      $comportamiento = 'comportamientoElectrotecnia';
+                      $evaluacion = 'evaluacionElectrotecnia';
+                      $observa = 'observaElectrotecnia';
 
-                      $campo1 = 'concepto_matematica';
-                      $campo2 = 'observa_matematica';
+                      $campo1 = 'aulico_electrotecnia';
+                      $campo2 = 'comportamiento_electrotecnia';
+                      $campo3 = 'evaluacion_electrotecnia';
+                      $campo4 = 'observa_electrotecnia';
+                    } 
+
+                    if ($mat == 'Inglés Técnico') {
+                    
+                      $aulico = 'aulicoItecnico';
+                      $comportamiento = 'comportamientoItecnico';
+                      $evaluacion = 'evaluacionItecnico';
+                      $observa = 'observaItecnico';
+
+                      $campo1 = 'aulico_itecnico';
+                      $campo2 = 'comportamiento_itecnico';
+                      $campo3 = 'evaluacion_itecnico';
+                      $campo4 = 'observa_itecnico';
+
+                    } 
+                    
+
+                    if ($mat == 'Laboratorio de Mediciones Eléctricas') {
+                    
+                      $aulico = 'aulicoMelectricas';
+                      $comportamiento = 'comportamientoMelectricas';
+                      $evaluacion = 'evaluacionMelectricas';
+                      $observa = 'observaMelectricas';
+
+                      $campo1 = 'aulico_melectricas';
+                      $campo2 = 'comportamiento_melectricas';
+                      $campo3 = 'evaluacion_melectricas';
+                      $campo4 = 'observa_melectricas';
 
                     } 
 
-                    if ($materia == 'Microbiología') {
+                    if ($mat == 'Legislación del Trabajo') {
                     
-                      $concepto = 'conceptoMicrobiologia';
-                      $observa = 'observaMicrobiologia';
+                      $aulico = 'aulicoLegislacion';
+                      $comportamiento = 'comportamientoLegislacion';
+                      $evaluacion = 'evaluacionLegislacion';
+                      $observa = 'observaLegislacion';
 
-                      $campo1 = 'concepto_microbiologia';
-                      $campo2 = 'observa_microbiologia';
+                      $campo1 = 'aulico_legislacion';
+                      $campo2 = 'comportamiento_legislacion';
+                      $campo3 = 'evaluacion_legislacion';
+                      $campo4 = 'observa_legislacion';
+                    } 
+
+                    if ($mat == 'Organización Industrial') {
+                    
+                      $aulico = 'aulicoOindustrial';
+                      $comportamiento = 'comportamientoOindustrial';
+                      $evaluacion = 'evaluacionOindustrial';
+                      $observa = 'observaOindustrial';
+
+                      $campo1 = 'aulico_oindustrial';
+                      $campo2 = 'comportamiento_oindustrial';
+                      $campo3 = 'evaluacion_oindustrial';
+                      $campo4 = 'observa_oindustrial';
 
                     } 
 
-                    if ($materia == 'Procesos Productivos') {
+                    if ($mat == 'Prácticas Profesionalizantes') {
                     
-                      $concepto = 'conceptoProcesos';
-                      $observa = 'observaProcesos';
+                      $aulico = 'aulicoPracticas';
+                      $comportamiento = 'comportamientoPracticas';
+                      $evaluacion = 'evaluacionPracticas';
+                      $observa = 'observaPracticas';
 
-                      $campo1 = 'concepto_procesos';
-                      $campo2 = 'observa_procesos';
+                      $campo1 = 'aulico_practicas';
+                      $campo2 = 'comportamiento_practicas';
+                      $campo3 = 'evaluacion_practicas';
+                      $campo4 = 'observa_practicas';
 
                     } 
 
-                    if ($materia == 'Química Analítica Cualitativa') {
+                    if ($mat == 'Seguridad e Higiene Industrial') {
                     
-                      $concepto = 'conceptoCualitativa';
-                      $observa = 'observaCualitativa';
+                      $aulico = 'aulicoSindustrial';
+                      $comportamiento = 'comportamientoSindustrial';
+                      $evaluacion = 'evaluacionSindustrial';
+                      $observa = 'observaSindustrial';
 
-                      $campo1 = 'concepto_cualitativa';
-                      $campo2 = 'observa_cualitativa';
-
+                      $campo1 = 'aulico_sindustrial';
+                      $campo2 = 'comportamiento_sindustrial';
+                      $campo3 = 'evaluacion_sindustrial';
+                      $campo4 = 'observa_sindustrial';
                     } 
 
-                    if ($materia == 'Química Analítica Cuantitativa') {
+                    if ($mat == 'Taller') {
                     
-                      $concepto = 'conceptoCuantitativa';
-                      $observa = 'observaCuantitativa';
+                      $aulico = 'aulicoTaller';
+                      $comportamiento = 'comportamientoTaller';
+                      $evaluacion = 'evaluacionTaller';
+                      $observa = 'observaTaller';
 
-                      $campo1 = 'concepto_cuantitativa';
-                      $campo2 = 'observa_cuantitativa';
-
+                      $campo1 = 'aulico_taller';
+                      $campo2 = 'comportamiento_taller';
+                      $campo3 = 'evaluacion_taller';
+                      $campo4 = 'observa_taller';
                     } 
 
-                    if ($materia == 'Química Biológica') {
+                    if ($mat == 'Termodinámica') {
                     
-                      $concepto = 'conceptoBiologica';
-                      $observa = 'observaBiologica';
-
-                      $campo1 = 'concepto_biologica';
-                      $campo2 = 'observa_biologica';
-
-                    } 
-
-                    if ($materia == 'Tecnología de los Alimentos') {
-                    
-                      $concepto = 'conceptoTecnologia';
-                      $observa = 'observaTecnologia';
-
-                      $campo1 = 'concepto_tecnologia';
-                      $campo2 = 'observa_tecnologia';
-
-                    } 
-
-                    if ($materia == 'Termodinámica') {
-                    
-                      $concepto = 'conceptoTermodinamica';
+                      $aulico = 'aulicoTermodinamica';
+                      $comportamiento = 'comportamientoTermodinamica';
+                      $evaluacion = 'evaluacionTermodinamica';
                       $observa = 'observaTermodinamica';
 
-                      $campo1 = 'concepto_termodinamica';
-                      $campo2 = 'observa_termodinamica';
+                      $campo1 = 'aulico_termodinamica';
+                      $campo2 = 'comportamiento_termodinamica';
+                      $campo3 = 'evaluacion_termodinamica';
+                      $campo4 = 'observa_termodinamica';
+                    } 
 
+                    if ($mat == 'Diseños de Envases') {
+                    
+                      $aulico = 'aulicoDisenio';
+                      $comportamiento = 'comportamientoDisenio';
+                      $evaluacion = 'evaluacionDisenio';
+                      $observa = 'observaDisenio';
+
+                      $campo1 = 'aulico_disenio';
+                      $campo2 = 'comportamiento_disenio';
+                      $campo3 = 'evaluacion_disenio';
+                      $campo4 = 'observa_disenio';
+                    } 
+
+                    if ($mat == 'Matemática Aplicada') {
+                    
+                      $aulico = 'aulicoMaplicada';
+                      $comportamiento = 'comportamientoMaplicada';
+                      $evaluacion = 'evaluacionMaplicada';
+                      $observa = 'observaMaplicada';
+
+                      $campo1 = 'aulico_maplicada';
+                      $campo2 = 'comportamiento_maplicada';
+                      $campo3 = 'evaluacion_maplicada';
+                      $campo4 = 'observa_maplicada';
+                    } 
+
+                    if ($mat == 'Microbiología') {
+                    
+                      $aulico = 'aulicoMicrobiologia';
+                      $comportamiento = 'comportamientoMicrobiologia';
+                      $evaluacion = 'evaluacionMicrobiologia';
+                      $observa = 'observaMicrobiologia';
+
+                      $campo1 = 'aulico_microbiologia';
+                      $campo2 = 'comportamiento_microbiologia';
+                      $campo3 = 'evaluacion_microbiologia';
+                      $campo4 = 'observa_microbiologia';
+                    } 
+
+                    
+
+                    if ($mat == 'Procesos Productivos') {
+                    
+                      $aulico = 'aulicoPproductivos';
+                      $comportamiento = 'comportamientoPproductivos';
+                      $evaluacion = 'evaluacionPproductivos';
+                      $observa = 'observaPproductivos';
+
+                      $campo1 = 'aulico_pproductivos';
+                      $campo2 = 'comportamiento_pproductivos';
+                      $campo3 = 'evaluacion_pproductivos';
+                      $campo4 = 'observa_pproductivos';
+                    } 
+
+                    if ($mat == 'Química Analítica Cualitativa') {
+                    
+                      $aulico = 'aulicoCualitativa';
+                      $comportamiento = 'comportamientoCualitativa';
+                      $evaluacion = 'evaluacionCualitativa';
+                      $observa = 'observaCualitativa';
+
+                      $campo1 = 'aulico_cualitativa';
+                      $campo2 = 'comportamiento_cualitativa';
+                      $campo3 = 'evaluacion_cualitativa';
+                      $campo4 = 'observa_cualitativa';
+                    } 
+
+                    if ($mat == 'Química Analítica Cuantitativa') {
+                    
+                      $aulico = 'aulicoCuantitativa';
+                      $comportamiento = 'comportamientoCuantitativa';
+                      $evaluacion = 'evaluacionCuantitativa';
+                      $observa = 'observaCuantitativa';
+
+                      $campo1 = 'aulico_cuantitativa';
+                      $campo2 = 'comportamiento_cuantitativa';
+                      $campo3 = 'evaluacion_cuantitativa';
+                      $campo4 = 'observa_cuantitativa';
                     } 
 
 
+
+                    if ($mat == 'Química Biológica') {
+                    
+                      $aulico = 'aulicoQbiologica';
+                      $comportamiento = 'comportamientoQbiologica';
+                      $evaluacion = 'evaluacionQbiologica';
+                      $observa = 'observaQbiologica';
+
+                      $campo1 = 'aulico_qbiologica';
+                      $campo2 = 'comportamiento_qbiologica';
+                      $campo3 = 'evaluacion_qbiologica';
+                      $campo4 = 'observa_qbiologica';
+                    }  
+
+                    if ($mat == 'Tecnología de los Alimentos') {
+                    
+                      $aulico = 'aulicoTalimentos';
+                      $comportamiento = 'comportamientoTalimentos';
+                      $evaluacion = 'evaluacionTalimentos';
+                      $observa = 'observaTalimentos';
+
+                      $campo1 = 'aulico_talimentos';
+                      $campo2 = 'comportamiento_talimentos';
+                      $campo3 = 'evaluacion_talimentos';
+                      $campo4 = 'observa_talimentos';
+                    }  
+
+                    
 
               
              echo' <div class="form-group">
@@ -316,11 +505,12 @@
                   
                   <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
                   
-                  <select class="form-control input-lg" id='.$concepto.' name='.$concepto.' required>
+                  <select class="form-control input-lg" id='.$aulico.' name='.$aulico.' required>
 
-                  <option value="">--- Ingrese Concepto ---</option>
-                  <option value="Aprobado">Aprobado</option>
-                  <option value="En Curso">En Curso</option>
+                  <option value="">--- Ingrese Trabajo Aúlico ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
                                         
 
                   </select>
@@ -329,7 +519,47 @@
 
               </div>
 
-                 
+
+
+              <div class="form-group">
+                
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
+                  
+                  <select class="form-control input-lg" id='.$comportamiento.' name='.$comportamiento.' required>
+
+                  <option value="">--- Ingrese Comportamiento ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
+                                        
+
+                  </select>
+
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
+                  
+                  <select class="form-control input-lg" id='.$evaluacion.' name='.$evaluacion.' required>
+
+                  <option value="">--- Ingrese Evaluación ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
+                                        
+
+                  </select>
+
+                </div>
+
+              </div>   
 
 
               <div class="form-group">          
@@ -365,7 +595,7 @@
               $curso = "31atv";
 
               $editarInforme = new ControladorInformes();
-              $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $concepto, $observa, $campo1, $campo2);
+              $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $aulico, $comportamiento, $evaluacion, $observa, $campo1, $campo2, $campo3, $campo4);
 
          
 

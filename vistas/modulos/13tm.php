@@ -1,12 +1,13 @@
 <?php
   
   $doc = $_SESSION["id"];
+  $ncurso = 3;
                     
-  $mate = ControladorMaterias::ctrBuscarMateria($doc);
+  $mate = ControladorMaterias::ctrBuscarMateria($doc, $ncurso);
 
   $ma = $mate["materia"];
 
-  var_dump($doc);
+  //var_dump($doc);
 
     $item = null;
     $valor = null;   
@@ -21,7 +22,7 @@
     
     <section class="content-header">
       <h1>
-        1º Tercera - Turno Mañana
+        1º Tercera - Turno Mañana - Materia: <?php echo $mate["materia"]; ?>
         
       </h1>
       <ol class="breadcrumb">
@@ -36,22 +37,22 @@
       <!-- Default box -->
       <div class="box">
 
-        <!-- <?php
+                  <?php
 
-          if ($_SESSION["perfil"] != "Preceptor") {
-            
-              echo '<div class="box-header with-border">                                      
+                    if ($_SESSION["perfil"] != "Preceptor") {
+                      
+                        echo '<div class="box-header with-border">                                      
 
-                <button class="btn btn-primary btnInformePrimero" materia="'.$_SESSION['materia'].'" ciclo="basico" curso="primero" periodo="'.$_SESSION['periodo'].'" idCurso=1 tabla="primero" informe="informe-curso-primero">
-                  
-                  Informes Curso
-                </button>
-                
-              </div>';
+                          <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="primero" informe="informe-curso-primero">
+                            
+                            Informes Curso
+                          </button>
+                          
+                        </div>';
 
-          }
+                    }
 
-        ?> -->
+            ?> 
 
 
 
@@ -113,7 +114,7 @@
                             
                             echo'<div class="btn-group">
 
-                              <button class="btn btn-warning btnEditarInformePrimero"  tabla="primero" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat='.$ma.' nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-warning btnEditarInformePrimero" tabla="primero" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat="'.$ma.'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
 
   
                             </div>';
@@ -188,9 +189,11 @@
 
                     $docente = $_SESSION["id"];
                     
-                    $materia = ControladorMaterias::ctrBuscarMateria($docente);
+                    $materia = ControladorMaterias::ctrBuscarMateria($docente, $ncurso);
 
                     $mat = $materia["materia"];
+
+                    //var_dump($mat);
 
 
                     if ($mat == 'Biología') {
@@ -237,15 +240,15 @@
 
                     if ($mat == 'Educación Física') {
                     
-                      $aulico = 'aulicoFisica';
-                      $comportamiento = 'comportamientoFisica';
-                      $evaluacion = 'evaluacionFisica';
-                      $observa = 'observaFisica';
+                      $aulico = 'aulicoEdfisica';
+                      $comportamiento = 'comportamientoEdfisica';
+                      $evaluacion = 'evaluacionEdfisica';
+                      $observa = 'observaEdfisica';
 
-                      $campo1 = 'aulico_fisica';
-                      $campo2 = 'comportamiento_fisica';
-                      $campo3 = 'evaluacion_fisica';
-                      $campo4 = 'observa_fisica';
+                      $campo1 = 'aulico_edfisica';
+                      $campo2 = 'comportamiento_edfisica';
+                      $campo3 = 'evaluacion_edfisica';
+                      $campo4 = 'observa_edfisica';
 
                     } 
 

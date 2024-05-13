@@ -1,7 +1,7 @@
 <?php
   
   $doc = $_SESSION["id"];
-  $ncurso = 1;
+  $ncurso = 27;
                     
   $mate = ControladorMaterias::ctrBuscarMateria($doc, $ncurso);
 
@@ -22,12 +22,13 @@
     
     <section class="content-header">
       <h1>
-        1º Primera - Turno Mañana - Materia: <?php echo $mate["materia"]; ?>
+      
+      1º Segunda Electromecánica - Turno Mañana - Materia: <?php echo $mate["materia"]; ?>
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">1º Primera TM</li>
+        <li class="active">1º Segunda E TM</li>
       </ol>
     </section>
 
@@ -37,22 +38,22 @@
       <!-- Default box -->
       <div class="box">
 
-         <?php
+              <?php
 
-          if ($_SESSION["perfil"] != "Preceptor") {
-            
-              echo '<div class="box-header with-border">                                      
+                if ($_SESSION["perfil"] != "Preceptor") {
+                                    
+                  echo '<div class="box-header with-border">                                      
 
-                <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=1 tabla="primero" informe="informe-curso-primero">
-                  
-                  Informes Curso
-                </button>
-                
-              </div>';
+                    <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=27 tabla="tercero" informe="informe-curso-tercero">
+                      
+                      Informes Curso
+                    </button>
+                    
+                  </div>';
 
-          }
+                }
 
-        ?> 
+              ?> 
 
 
 
@@ -79,8 +80,8 @@
               <?php
 
                   $item = "id_curso";
-                  $valor = 1;
-                  $tabla = "primero";
+                  $valor = 27;
+                  $tabla = "tercero";
                   $periodo = $_SESSION["periodo"];
                   $verifica = true;
 
@@ -114,7 +115,7 @@
                             
                             echo'<div class="btn-group">
 
-                              <button class="btn btn-warning btnEditarInformePrimero"  tabla="primero" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat="'.$ma.'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-warning btnEditarInformePrimero"  tabla="tercero" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat="'.$ma.'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
 
   
                             </div>';
@@ -189,7 +190,6 @@
 
                     $docente = $_SESSION["id"];
                     
-                    
                     $materia = ControladorMaterias::ctrBuscarMateria($docente, $ncurso);
 
                     $mat = $materia["materia"];
@@ -223,26 +223,12 @@
 
                     }      
 
-                    if ($mat == 'Educación Artística') {
-                    
-                      $aulico = 'aulicoArtistica';
-                      $comportamiento = 'comportamientoArtistica';
-                      $evaluacion = 'evaluacionArtistica';
-                      $observa = 'observaArtistica';
-
-                      $campo1 = 'aulico_artistica';
-                      $campo2 = 'comportamiento_artistica';
-                      $campo3 = 'evaluacion_artistica';
-                      $campo4 = 'observa_artistica';
-
-                    } 
-
                     if ($mat == 'Educación Física') {
                     
-                      $aulico = 'aulicoEdfisica';
-                      $comportamiento = 'comportamientoEdfisica';
-                      $evaluacion = 'evaluacionEdfisica';
-                      $observa = 'observaEdfisica';
+                      $aulico = 'aulicoEdFisica';
+                      $comportamiento = 'comportamientoEdFisica';
+                      $evaluacion = 'evaluacionEdFisica';
+                      $observa = 'observaEdFisica';
 
                       $campo1 = 'aulico_edfisica';
                       $campo2 = 'comportamiento_edfisica';
@@ -265,17 +251,17 @@
 
                     } 
                     
-                    if ($mat == 'Físico - Química') {
+                    if ($mat == 'Física') {
                     
-                      $aulico = 'aulicoFisicoQuimica';
-                      $comportamiento = 'comportamientoFisicoQuimica';
-                      $evaluacion = 'evaluacionFisicoQuimica';
-                      $observa = 'observaFisicoQuimica';
+                      $aulico = 'aulicoFisica';
+                      $comportamiento = 'comportamientoFisica';
+                      $evaluacion = 'evaluacionFisica';
+                      $observa = 'observaFisica';
 
-                      $campo1 = 'aulico_fisico_quimica';
-                      $campo2 = 'comportamiento_fisico_quimica';
-                      $campo3 = 'evaluacion_fisico_quimica';
-                      $campo4 = 'observa_fisico_quimica';
+                      $campo1 = 'aulico_fisica';
+                      $campo2 = 'comportamiento_fisica';
+                      $campo3 = 'evaluacion_fisica';
+                      $campo4 = 'observa_fisica';
 
                     } 
               
@@ -348,6 +334,20 @@
                       $campo4 = 'observa_matematica';
                     } 
 
+                    if ($mat == 'Química') {
+                    
+                      $aulico = 'aulicoQuimica';
+                      $comportamiento = 'comportamientoQuimica';
+                      $evaluacion = 'evaluacionQuimica';
+                      $observa = 'observaQuimica';
+
+                      $campo1 = 'aulico_quimica';
+                      $campo2 = 'comportamiento_quimica';
+                      $campo3 = 'evaluacion_quimica';
+                      $campo4 = 'observa_quimica';
+
+                    } 
+
                     if ($mat == 'Taller') {
                     
                       $aulico = 'aulicoTaller';
@@ -359,6 +359,32 @@
                       $campo2 = 'comportamiento_taller';
                       $campo3 = 'evaluacion_taller';
                       $campo4 = 'observa_taller';
+                    } 
+
+                    if ($mat == 'Química General') {
+                    
+                      $aulico = 'aulicoQuimicaGeneral';
+                      $comportamiento = 'comportamientoQuimicaGeneral';
+                      $evaluacion = 'evaluacionQuimicaGeneral';
+                      $observa = 'observaQuimicaGeneral';
+
+                      $campo1 = 'aulico_quimica_general';
+                      $campo2 = 'comportamiento_quimica_general';
+                      $campo3 = 'evaluacion_quimica_general';
+                      $campo4 = 'observa_quimica_general';
+                    } 
+
+                    if ($mat == 'Estática') {
+                    
+                      $aulico = 'aulicoEstatica';
+                      $comportamiento = 'comportamientoEstatica';
+                      $evaluacion = 'evaluacionEstatica';
+                      $observa = 'observaEstatica';
+
+                      $campo1 = 'aulico_estatica';
+                      $campo2 = 'comportamiento_estatica';
+                      $campo3 = 'evaluacion_estatica';
+                      $campo4 = 'observa_estatica';
                     } 
 
               
@@ -454,8 +480,8 @@
 
       
 
-              $tabla = "primero";
-              $curso = "11tm";
+              $tabla = "tercero";
+              $curso = "12etm";
 
               $editarInforme = new ControladorInformes();
               $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $aulico, $comportamiento, $evaluacion, $observa, $campo1, $campo2, $campo3, $campo4);

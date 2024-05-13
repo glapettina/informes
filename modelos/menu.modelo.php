@@ -173,4 +173,33 @@
 
 		}
 
+		/*=============================================
+						BUSCAR MENU DETALLE
+		=============================================*/
+
+		static public function mdlBuscarMenuDetalle($usuario){
+
+			$stmt = Conexion::conectar()->prepare("SELECT 
+            menu_detalle.mend_id,
+            menu_detalle.perfil,
+			menu_detalle.usuario_id,
+			menu_detalle.curso_id,
+			menu_detalle.materia_id,
+			menu_detalle.mend_permiso,
+			menu_detalle.estado,
+			cursos.id,
+			cursos.menu,
+			cursos.link
+            FROM menu_detalle
+            INNER JOIN cursos ON cursos.id = menu_detalle.curso_id
+            WHERE menu_detalle.usuario_id = :usuario");
+
+			$stmt -> bindParam(":usuario", $usuario, PDO::PARAM_INT);
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
+
 	}

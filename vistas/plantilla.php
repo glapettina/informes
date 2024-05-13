@@ -132,6 +132,7 @@
           $_GET["ruta"] == "11atm" ||     
           $_GET["ruta"] == "12att" ||     
           $_GET["ruta"] == "11etm" ||     
+          $_GET["ruta"] == "12etm" ||     
           $_GET["ruta"] == "11ett" ||     
           $_GET["ruta"] == "21atv" ||     
           $_GET["ruta"] == "21etv" ||     

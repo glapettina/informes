@@ -57,10 +57,10 @@ class imprimirReporte{
 
 		if ($per[0] == '01') {
 			
-			$titulo = 'MES: OCTUBRE ' .$per2;
+			$titulo = 'MES: MAYO ' .$per2;
 		}else{
 
-			$titulo = 'MES: OCTUBRE ' .$per2;
+			$titulo = 'MES: MAYO ' .$per2;
 		}
 		
 
@@ -71,106 +71,120 @@ class imprimirReporte{
 		 if ($_GET["materia"] == "Biología") {
 
 		 	 $materia = "BIOLOGÍA";
-			 $campo1 = 'concepto_biologia';
-			 $campo2 = 'observa_biologia';
+			 $campo1 = 'aulico_biologia';
+			 $campo2 = 'comportamiento_biologia';
+			 $campo3 = 'evaluacion_biologia';
+			 $campo4 = 'observa_biologia';
 
 		 }	
 
 		 if ($_GET["materia"] == "Dibujo Técnico") {
 
 		   $materia = "DIBUJO TÉCNICO";
-		   $campo1 = 'concepto_dibujo';
-		   $campo2 = 'observa_dibujo';
+		   	 $campo1 = 'aulico_dibujo';
+			 $campo2 = 'comportamiento_dibujo';
+			 $campo3 = 'evaluacion_dibujo';
+			 $campo4 = 'observa_dibujo';
 
 	   	}
 		
 		if ($_GET["materia"] == "Educación Artística") {
 
 			$materia = "EDUCACIÓN ARTÍSTICA";
-		    $campo1 = 'concepto_artistica';
-		    $campo2 = 'observa_artistica';
-
+			$campo1 = 'aulico_artistica';
+			$campo2 = 'comportamiento_artistica';
+			$campo3 = 'evaluacion_artistica';
+			$campo4 = 'observa_artistica';
 	   }	
 
 	   if ($_GET["materia"] == "Educación Física") {
 
 			$materia = "EDUCACIÓN FÍSICA";
-			$campo1 = 'concepto_fisica';
-			$campo2 = 'observa_fisica';
+		   	$campo1 = 'aulico_edfisica';
+			 $campo2 = 'comportamiento_edfisica';
+			 $campo3 = 'evaluacion_edfisica';
+			 $campo4 = 'observa_edfisica';
 
    		}
 		
 		if ($_GET["materia"] == "Educación para la Ciudadanía") {
 
 		   $materia = "EDUCACIÓN PARA LA CIUDADANÍA";
-		   $campo1 = 'concepto_ciudadania';
-		   $campo2 = 'observa_ciudadania';
+		   $campo1 = 'aulico_ciudadania';
+			 $campo2 = 'comportamiento_ciudadania';
+			 $campo3 = 'evaluacion_ciudadania';
+			 $campo4 = 'observa_ciudadania';
 
 	   }	
 
-	   if ($_GET["materia"] == "Físico - Química") {
+	   if ($_GET["materia"] == "Físico Química") {
 
-		$materia = "FÍSICO - QUÍMICA";
-	   $campo1 = 'concepto_fisico_quimica';
-	   $campo2 = 'observa_fisico_quimica';
+		$materia = "FÍSICO QUÍMICA";
+		$campo1 = 'aulico_fisico_quimica';
+		$campo2 = 'comportamiento_fisico_quimica';
+		$campo3 = 'evaluacion_fisico_quimica';
+		$campo4 = 'observa_fisico_quimica';
 
    		}	
 
 		   if ($_GET["materia"] == "Geografía") {
 
 			$materia = "GEOGRAFÍA";
-		   $campo1 = 'concepto_geografia';
-		   $campo2 = 'observa_geografia';
+			$campo1 = 'aulico_geografia';
+			$campo2 = 'comportamiento_geografia';
+			$campo3 = 'evaluacion_geografia';
+			$campo4 = 'observa_geografia';
 
 	   }	
 
-	   if ($_GET["materia"] == "Geografía") {
-
-		$materia = "GEOGRAFÍA";
-	   $campo1 = 'concepto_geografia';
-	   $campo2 = 'observa_geografia';
-
-   }	
+	   
 
    if ($_GET["materia"] == "Historia") {
 
-	$materia = "HISTORIA";
-	$campo1 = 'concepto_historia';
-	$campo2 = 'observa_historia';
+			$materia = "HISTORIA";
+			$campo1 = 'aulico_historia';
+			 $campo2 = 'comportamiento_historia';
+			 $campo3 = 'evaluacion_historia';
+			 $campo4 = 'observa_historia';
 
    }	
 
    if ($_GET["materia"] == "Inglés") {
 
-	$materia = "INGLÉS";
-	$campo1 = 'concepto_ingles';
-	$campo2 = 'observa_ingles';
+			$materia = "INGLÉS";
+			$campo1 = 'aulico_ingles';
+			 $campo2 = 'comportamiento_ingles';
+			 $campo3 = 'evaluacion_ingles';
+			 $campo4 = 'observa_ingles';
 
 	  }	
 
 	  if ($_GET["materia"] == "Lengua y Literatura") {
 
-		$materia = "LENGUA Y LITERATURA";
-		$campo1 = 'concepto_lengua';
-		$campo2 = 'observa_lengua';
-
+				$materia = "LENGUA Y LITERATURA";
+				$campo1 = 'aulico_lengua';
+				 $campo2 = 'comportamiento_lengua';
+				 $campo3 = 'evaluacion_lengua';
+				 $campo4 = 'observa_lengua';
    }	
 
    if ($_GET["materia"] == "Matemática") {
 
 	$materia = "MATEMÁTICA";
-	$campo1 = 'concepto_matematica';
-	$campo2 = 'observa_matematica';
-
+	$campo1 = 'aulico_matematica';
+	$campo2 = 'comportamiento_matematica';
+	$campo3 = 'evaluacion_matematica';
+	$campo4 = 'observa_matematica';
    }	
 
    
    if ($_GET["materia"] == "Taller") {
 
 	$materia = "TALLER";
-	$campo1 = 'concepto_taller';
-	$campo2 = 'observa_taller';
-
+	$campo1 = 'aulico_taller';
+	$campo2 = 'comportamiento_taller';
+	$campo3 = 'evaluacion_taller';
+	$campo4 = 'observa_taller';
 }	
 
 		
@@ -294,7 +308,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "BIOLOGÍA";
 
-			$concepto = $value["concepto_biologia"];
+			$aulico = $value["aulico_biologia"];
+			$comportamiento = $value["comportamiento_biologia"];
+			$evaluacion = $value["evaluacion_biologia"];
 			$observa = $value["observa_biologia"];
 
 		}
@@ -303,7 +319,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "DIBUJO TÉCNICO";
 
-			$concepto = $value["concepto_dibujo"];
+			$$aulico = $value["aulico_dibujo"];
+			$comportamiento = $value["comportamiento_dibujo"];
+			$evaluacion = $value["evaluacion_dibujo"];
 			$observa = $value["observa_dibujo"];
 
 		}
@@ -312,7 +330,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "EDUCACIÓN ARTÍSTICA";
 
-			$concepto = $value["concepto_artistica"];
+			$aulico = $value["aulico_artistica"];
+			$comportamiento = $value["comportamiento_artistica"];
+			$evaluacion = $value["evaluacion_artistica"];
 			$observa = $value["observa_artistica"];
 
 		}
@@ -321,8 +341,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "EDUCACIÓN FÍSICA";
 
-			$concepto = $value["concepto_fisica"];
-			$observa = $value["observa_fisica"];
+			$aulico = $value["aulico_edfisica"];
+			$comportamiento = $value["comportamiento_edfisica"];
+			$evaluacion = $value["evaluacion_edfisica"];
+			$observa = $value["observa_edfisica"];
 
 		}
 
@@ -330,16 +352,20 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "EDUCACIÓN PARA LA CIUDADANÍA";
 
-			$concepto = $value["concepto_ciudadania"];
+			$aulico = $value["aulico_ciudadania"];
+			$comportamiento = $value["comportamiento_ciudadania"];
+			$evaluacion = $value["evaluacion_ciudadania"];
 			$observa = $value["observa_ciudadania"];
 
 		}
 
-		if ($_GET["materia"] == "Físico - Química") {
+		if ($_GET["materia"] == "Físico Química") {
 
-			$materia = "FÍSICO - QUÍMICA";
+			$materia = "FÍSICO QUÍMICA";
 
-			$concepto = $value["concepto_fisico_quimica"];
+			$aulico = $value["aulico_fisico_quimica"];
+			$comportamiento = $value["comportamiento_fisico_quimica"];
+			$evaluacion = $value["evaluacion_fisico_quimica"];
 			$observa = $value["observa_fisico_quimica"];
 
 		}
@@ -348,7 +374,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "GEOGRAFÍA";
 
-			$concepto = $value["concepto_geografia"];
+			$aulico = $value["aulico_geografia"];
+			$comportamiento = $value["comportamiento_geografia"];
+			$evaluacion = $value["evaluacion_geografia"];
 			$observa = $value["observa_geografia"];
 
 		}
@@ -357,7 +385,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "HISTORIA";
 
-			$concepto = $value["concepto_historia"];
+			$aulico = $value["aulico_historia"];
+			$comportamiento = $value["comportamiento_historia"];
+			$evaluacion = $value["evaluacion_historia"];
 			$observa = $value["observa_historia"];
 
 		}
@@ -366,7 +396,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "INGLÉS";
 
-			$concepto = $value["concepto_ingles"];
+			$aulico = $value["aulico_ingles"];
+			$comportamiento = $value["comportamiento_ingles"];
+			$evaluacion = $value["evaluacion_ingles"];
 			$observa = $value["observa_ingles"];
 
 		}
@@ -375,7 +407,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "LENGUA Y LITERATURA";
 
-			$concepto = $value["concepto_lengua"];
+			$aulico = $value["aulico_lengua"];
+			$comportamiento = $value["comportamiento_lengua"];
+			$evaluacion = $value["evaluacion_lengua"];
 			$observa = $value["observa_lengua"];
 
 		}
@@ -384,7 +418,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MATEMÁTICA";
 
-			$concepto = $value["concepto_matematica"];
+			$aulico = $value["aulico_matematica"];
+			$comportamiento = $value["comportamiento_matematica"];
+			$evaluacion = $value["evaluacion_matematica"];
 			$observa = $value["observa_matematica"];
 
 		}
@@ -393,7 +429,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "TALLER";
 
-			$concepto = $value["concepto_taller"];
+			$aulico = $value["aulico_taller"];
+			$comportamiento = $value["comportamiento_taller"];
+			$evaluacion = $value["evaluacion_taller"];
 			$observa = $value["observa_taller"];
 
 		}
@@ -528,16 +566,33 @@ $bloque5 = <<<EOF
 
 
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:165px">
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
 
 				<br>
 
-				CONCEPTO
+				TRABAJO AÚLICO
+
+
+			</td>
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+				<br>
+
+				COMPORTAMIENTO
 
 
 			</td>
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:435px">
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+				<br>
+
+				EVALUACIÓN
+
+
+			</td>
+
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:300px">
 
 				<br>
 
@@ -581,15 +636,31 @@ $bloque6 = <<<EOF
 
 
 
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:165px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
 
 				<br>
 
-				$concepto
+				$aulico
 
 			</td>
 
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:435px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$comportamiento
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$evaluacion
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:300px">
 
 				<br>
 

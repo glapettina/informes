@@ -1,6 +1,13 @@
 <?php
   
-  $materia = $_SESSION["materia"];
+  $doc = $_SESSION["id"];
+  $ncurso = 9;
+                    
+  $mate = ControladorMaterias::ctrBuscarMateria($doc, $ncurso);
+
+  $ma = $mate["materia"];
+
+  //var_dump($doc);
 
     $item = null;
     $valor = null;   
@@ -15,7 +22,7 @@
     
     <section class="content-header">
       <h1>
-        2º Tercera - Turno Mañana
+        2º Tercera - Turno Mañana - Materia: <?php echo $mate["materia"]; ?>
         
       </h1>
       <ol class="breadcrumb">
@@ -30,22 +37,22 @@
       <!-- Default box -->
       <div class="box">
 
-        <?php
+                <?php
 
-          if ($_SESSION["perfil"] != "Preceptor") {
-            
-              echo '<div class="box-header with-border">                                      
+                    if ($_SESSION["perfil"] != "Preceptor") {
+                                        
+                      echo '<div class="box-header with-border">                                      
 
-                <button class="btn btn-primary btnInformeSegundo" materia="'.$_SESSION['materia'].'" ciclo="basico" curso="segundo" periodo="'.$_SESSION['periodo'].'" idCurso=9 tabla="segundo" informe="informe-curso-segundo">
-                  
-                  Informes Curso
-                </button>
-                
-              </div>';
+                        <button class="btn btn-primary btnInformeSegundo" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=9 tabla="segundo" informe="informe-curso-segundo">
+                          
+                          Informes Curso
+                        </button>
+                        
+                      </div>';
 
-          }
+                    }
 
-        ?>
+          ?> 
 
 
 
@@ -107,7 +114,7 @@
                             
                             echo'<div class="btn-group">
 
-                              <button class="btn btn-warning btnEditarInformeSegundo" materia="'.$_SESSION["materia"].'" tabla="segundo" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-warning btnEditarInformePrimero"  tabla="segundo" periodo="'.$_SESSION['periodo'].'" idAlumno="'.$value["id"].'" mat="'.$ma.'" nombreAlumno="'.$value["nombre"].'" data-toggle="modal" data-target="#modalEditarInforme"><i class="fa fa-pencil"></i></button>
 
   
                             </div>';
@@ -179,128 +186,178 @@
         <!-- ENTRADA PARA EL CONCEPTO --> 
 
               <?php
-                    
-                    $materia = $_SESSION["materia"];
 
-                    if ($materia == 'Biología') {
+                    $docente = $_SESSION["id"];
                     
-                      $concepto = 'conceptoBiologia';
+                    $materia = ControladorMaterias::ctrBuscarMateria($docente, $ncurso);
+
+                    $mat = $materia["materia"];
+
+
+                    if ($mat == 'Biología') {
+                    
+                      $aulico = 'aulicoBiologia';
+                      $comportamiento = 'comportamientoBiologia';
+                      $evaluacion = 'evaluacionBiologia';
                       $observa = 'observaBiologia';
 
-                      $campo1 = 'concepto_biologia';
-                      $campo2 = 'observa_biologia';
+                      $campo1 = 'aulico_biologia';
+                      $campo2 = 'comportamiento_biologia';
+                      $campo3 = 'evaluacion_biologia';
+                      $campo4 = 'observa_biologia';
 
                     }          
 
-                    if ($materia == 'Dibujo Técnico') {
+                    if ($mat == 'Dibujo Técnico') {
                     
-                      $concepto = 'conceptoDibujo';
+                      $aulico = 'aulicoDibujo';
+                      $comportamiento = 'comportamientoDibujo';
+                      $evaluacion = 'evaluacionDibujo';
                       $observa = 'observaDibujo';
 
-                      $campo1 = 'concepto_dibujo';
-                      $campo2 = 'observa_dibujo';
+                      $campo1 = 'aulico_dibujo';
+                      $campo2 = 'comportamiento_dibujo';
+                      $campo3 = 'evaluacion_dibujo';
+                      $campo4 = 'observa_dibujo';
 
                     }      
 
-
-                    if ($materia == 'Educación Física') {
+                    if ($mat == 'Educación Física') {
                     
-                      $concepto = 'conceptoEdFisica';
+                      $aulico = 'aulicoEdFisica';
+                      $comportamiento = 'comportamientoEdFisica';
+                      $evaluacion = 'evaluacionEdFisica';
                       $observa = 'observaEdFisica';
 
-                      $campo1 = 'concepto_edfisica';
-                      $campo2 = 'observa_edfisica';
+                      $campo1 = 'aulico_edfisica';
+                      $campo2 = 'comportamiento_edfisica';
+                      $campo3 = 'evaluacion_edfisica';
+                      $campo4 = 'observa_edfisica';
 
                     } 
 
-                    if ($materia == 'Educación para la Ciudadanía') {
+                    if ($mat == 'Educación para la Ciudadanía') {
                     
-                      $concepto = 'conceptoCiudadania';
+                      $aulico = 'aulicoCiudadania';
+                      $comportamiento = 'comportamientoCiudadania';
+                      $evaluacion = 'evaluacionCiudadania';
                       $observa = 'observaCiudadania';
 
-                      $campo1 = 'concepto_ciudadania';
-                      $campo2 = 'observa_ciudadania';
+                      $campo1 = 'aulico_ciudadania';
+                      $campo2 = 'comportamiento_ciudadania';
+                      $campo3 = 'evaluacion_ciudadania';
+                      $campo4 = 'observa_ciudadania';
 
                     } 
                     
-                    if ($materia == 'Física') {
+                    if ($mat == 'Física') {
                     
-                      $concepto = 'conceptoFisica';
+                      $aulico = 'aulicoFisica';
+                      $comportamiento = 'comportamientoFisica';
+                      $evaluacion = 'evaluacionFisica';
                       $observa = 'observaFisica';
 
-                      $campo1 = 'concepto_fisica';
-                      $campo2 = 'observa_fisica';
+                      $campo1 = 'aulico_fisica';
+                      $campo2 = 'comportamiento_fisica';
+                      $campo3 = 'evaluacion_fisica';
+                      $campo4 = 'observa_fisica';
 
                     } 
               
-                    if ($materia == 'Geografía') {
+                    if ($mat == 'Geografía') {
                     
-                      $concepto = 'conceptoGeografia';
+                      $aulico = 'aulicoGeografia';
+                      $comportamiento = 'comportamientoGeografia';
+                      $evaluacion = 'evaluacionGeografia';
                       $observa = 'observaGeografia';
 
-                      $campo1 = 'concepto_geografia';
-                      $campo2 = 'observa_geografia';
+                      $campo1 = 'aulico_geografia';
+                      $campo2 = 'comportamiento_geografia';
+                      $campo3 = 'evaluacion_geografia';
+                      $campo4 = 'observa_geografia';
 
                     } 
 
-                    if ($materia == 'Historia') {
+                    if ($mat == 'Historia') {
                     
-                      $concepto = 'conceptoHistoria';
+                      $aulico = 'aulicoHistoria';
+                      $comportamiento = 'comportamientoHistoria';
+                      $evaluacion = 'evaluacionHistoria';
                       $observa = 'observaHistoria';
 
-                      $campo1 = 'concepto_historia';
-                      $campo2 = 'observa_historia';
+                      $campo1 = 'aulico_historia';
+                      $campo2 = 'comportamiento_historia';
+                      $campo3 = 'evaluacion_historia';
+                      $campo4 = 'observa_historia';
 
                     } 
 
-                    if ($materia == 'Inglés') {
+                    if ($mat == 'Inglés') {
                     
-                      $concepto = 'conceptoIngles';
+                      $aulico = 'aulicoIngles';
+                      $comportamiento = 'comportamientoIngles';
+                      $evaluacion = 'evaluacionIngles';
                       $observa = 'observaIngles';
 
-                      $campo1 = 'concepto_ingles';
-                      $campo2 = 'observa_ingles';
+                      $campo1 = 'aulico_ingles';
+                      $campo2 = 'comportamiento_ingles';
+                      $campo3 = 'evaluacion_ingles';
+                      $campo4 = 'observa_ingles';
 
                     } 
 
-                    if ($materia == 'Lengua y Literatura') {
+                    if ($mat == 'Lengua y Literatura') {
                     
-                      $concepto = 'conceptoLengua';
+                      $aulico = 'aulicoLengua';
+                      $comportamiento = 'comportamientoLengua';
+                      $evaluacion = 'evaluacionLengua';
                       $observa = 'observaLengua';
 
-                      $campo1 = 'concepto_lengua';
-                      $campo2 = 'observa_lengua';
+                      $campo1 = 'aulico_lengua';
+                      $campo2 = 'comportamiento_lengua';
+                      $campo3 = 'evaluacion_lengua';
+                      $campo4 = 'observa_lengua';
 
                     } 
 
-                    if ($materia == 'Matemática') {
+                    if ($mat == 'Matemática') {
                     
-                      $concepto = 'conceptoMatematica';
+                      $aulico = 'aulicoMatematica';
+                      $comportamiento = 'comportamientoMatematica';
+                      $evaluacion = 'evaluacionMatematica';
                       $observa = 'observaMatematica';
 
-                      $campo1 = 'concepto_matematica';
-                      $campo2 = 'observa_matematica';
-
+                      $campo1 = 'aulico_matematica';
+                      $campo2 = 'comportamiento_matematica';
+                      $campo3 = 'evaluacion_matematica';
+                      $campo4 = 'observa_matematica';
                     } 
 
-                    if ($materia == 'Química') {
+                    if ($mat == 'Química') {
                     
-                      $concepto = 'conceptoQuimica';
+                      $aulico = 'aulicoQuimica';
+                      $comportamiento = 'comportamientoQuimica';
+                      $evaluacion = 'evaluacionQuimica';
                       $observa = 'observaQuimica';
 
-                      $campo1 = 'concepto_quimica';
-                      $campo2 = 'observa_quimica';
+                      $campo1 = 'aulico_quimica';
+                      $campo2 = 'comportamiento_quimica';
+                      $campo3 = 'evaluacion_quimica';
+                      $campo4 = 'observa_quimica';
 
                     } 
 
-                    if ($materia == 'Taller') {
+                    if ($mat == 'Taller') {
                     
-                      $concepto = 'conceptoTaller';
+                      $aulico = 'aulicoTaller';
+                      $comportamiento = 'comportamientoTaller';
+                      $evaluacion = 'evaluacionTaller';
                       $observa = 'observaTaller';
 
-                      $campo1 = 'concepto_taller';
-                      $campo2 = 'observa_taller';
-
+                      $campo1 = 'aulico_taller';
+                      $campo2 = 'comportamiento_taller';
+                      $campo3 = 'evaluacion_taller';
+                      $campo4 = 'observa_taller';
                     } 
 
               
@@ -310,11 +367,12 @@
                   
                   <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
                   
-                  <select class="form-control input-lg" id='.$concepto.' name='.$concepto.' required>
+                  <select class="form-control input-lg" id='.$aulico.' name='.$aulico.' required>
 
-                  <option value="">--- Ingrese Concepto ---</option>
-                  <option value="Aprobado">Aprobado</option>
-                  <option value="En Curso">En Curso</option>
+                  <option value="">--- Ingrese Trabajo Aúlico ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
                                         
 
                   </select>
@@ -323,7 +381,47 @@
 
               </div>
 
-                 
+
+
+              <div class="form-group">
+                
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
+                  
+                  <select class="form-control input-lg" id='.$comportamiento.' name='.$comportamiento.' required>
+
+                  <option value="">--- Ingrese Comportamiento ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
+                                        
+
+                  </select>
+
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-check-square-o"></i></span>                  
+                  
+                  <select class="form-control input-lg" id='.$evaluacion.' name='.$evaluacion.' required>
+
+                  <option value="">--- Ingrese Evaluación ---</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bueno">Bueno</option>
+                  <option value="Muy Bueno">Muy Bueno</option>
+                                        
+
+                  </select>
+
+                </div>
+
+              </div>   
 
 
               <div class="form-group">          
@@ -359,7 +457,7 @@
               $curso = "23tm";
 
               $editarInforme = new ControladorInformes();
-              $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $concepto, $observa, $campo1, $campo2);
+              $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $aulico, $comportamiento, $evaluacion, $observa, $campo1, $campo2, $campo3, $campo4);
 
          
 

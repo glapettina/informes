@@ -13,10 +13,9 @@
 
 		static public function mdlIngresarMateria($tabla, $datos){
 
-			$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, ciclo) VALUES (:nombre, :ciclo)");
+			$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre) VALUES (:nombre)");
 
 			$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-			$stmt->bindParam(":ciclo", $datos["ciclo"], PDO::PARAM_STR);
 
 			if ($stmt->execute()) {
 				
@@ -139,7 +138,7 @@
 						BUSCAR MATERIA
 		=============================================*/
 
-		static public function mdlBuscarMateria($docente){
+		static public function mdlBuscarMateria($docente, $ncurso){
 
 			$stmt = Conexion::conectar()->prepare("SELECT 
             usuarios.id,
@@ -149,13 +148,18 @@
             menu_detalle.mend_id,
             menu_detalle.usuario_id,
             menu_detalle.curso_id,
-            menu_detalle.materia_id
+            menu_detalle.materia_id,
+			cursos.id,
+			cursos.nombre,
+			cursos.turno
             FROM usuarios
             INNER JOIN menu_detalle ON usuarios.id = menu_detalle.usuario_id
             INNER JOIN materias ON menu_detalle.materia_id = materias.id_materia
-            WHERE usuarios.id = :docente");
+			INNER JOIN cursos ON menu_detalle.curso_id = cursos.id
+            WHERE usuarios.id = :docente AND cursos.id = :ncurso ");
 
 				$stmt -> bindParam(":docente", $docente, PDO::PARAM_INT);
+				$stmt -> bindParam(":ncurso", $ncurso, PDO::PARAM_INT);
 
 				$stmt -> execute();
 

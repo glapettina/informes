@@ -14,8 +14,7 @@ class ControladorMaterias{
 				
 				$tabla = "materias";
 
-				$datos = array("nombre" => $_POST["nuevoNombre"], 
-								"ciclo" => $_POST["nuevoCiclo"]);
+				$datos = array("nombre" => $_POST["nuevoNombre"]);
 
 				$respuesta = ModeloMaterias::mdlIngresarMateria($tabla, $datos);
 
@@ -101,7 +100,7 @@ class ControladorMaterias{
 					
 					$tabla = "materias";
 
-					$datos = array("nombre" => $_POST["editarMateria"], "ciclo" => $_POST["editarCiclo"], "id_materia" => $_POST["idMateria"]);
+					$datos = array("nombre" => $_POST["editarMateria"], "id_materia" => $_POST["idMateria"]);
 
 					$respuesta = ModeloMaterias::mdlEditarMateria($tabla, $datos);
 
@@ -189,13 +188,13 @@ class ControladorMaterias{
 						BUSCAR MATERIA
 		=============================================*/
 
-		static public function ctrBuscarMateria($docente){
+		static public function ctrBuscarMateria($docente, $ncurso){
 
-			$respuesta = ModeloMaterias::mdlBuscarMateria($docente);
+			$respuesta = ModeloMaterias::mdlBuscarMateria($docente, $ncurso);
 
 			return $respuesta;
 
-			//var_dump($respuesta["materia"]);
+			//var_dump($respuesta);
 
 		}
 
