@@ -121,7 +121,7 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
                             <div class="btn-group">
                                 
                               <button class="btn btn-warning btnEditarCurso" idCurso="'.$value["mend_id"].'" data-toggle="modal" data-target="#modalEditarCurso"><i class="fa fa-pencil"></i></button>
-                              <button class="btn btn-danger btnEliminarCurso" idCurso="'.$value["mend_id"].'"><i class="fa fa-times"></i></button>
+                              <button class="btn btn-danger btnEliminarMenuDetalle" idMenuDetalle="'.$value["mend_id"].'"><i class="fa fa-times"></i></button>
 
                             </div>
 

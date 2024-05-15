@@ -136,6 +136,9 @@
                            
                             
                              
+                            }else{
+
+                              echo'<button class="btn btn-primary btnImprimirInformeSegundoCb" periodo="'.$_SESSION['periodo'].'" informe="informe_segundocb" tabla="segundo" idAlumno="'.$value["id"].'" data-toggle="modal" data-target="#modalImprimirInformeCb"><i class="fa fa-print"></i></button>';
                             }
 
                            

@@ -142,4 +142,29 @@
 
 		}
 
+
+
+		/*=============================================
+					BORRAR MENÚ DETALLE            
+		=============================================*/
+
+		static public function mdlBorrarMenuDetalle($tabla, $datos){
+
+			$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE mend_id = :mend_id ");
+
+			$stmt -> bindParam(":mend_id ", $datos, PDO::PARAM_INT);
+
+			if ($stmt->execute()) {
+				
+				return "ok";
+			}else{
+
+				return "error";
+			}
+
+			$stmt->close();
+			$stmt = null;
+
+		}
+
 	}

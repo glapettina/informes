@@ -194,4 +194,44 @@ class ControladorCursos{
 			}
 		}
 
+
+	/*=============================================
+				BORRAR MENÚ DETALLE
+	=============================================*/
+
+		static public function ctrBorrarMenuDetalle(){
+
+			if (isset($_GET["idMenuDetalle"])) {
+
+
+				$tabla = "menu_detalle";
+				
+				
+				$datos = $_GET["idMenuDetalle"];
+
+				$respuesta = ModeloCursos::mdlBorrarMenuDetalle($tabla, $datos);
+
+				if ($respuesta == "ok") {
+					
+					echo '<script>
+
+						swal({
+							type: "success",
+							title: "El acceso al menú ha sido borrado correctamente",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+							}).then((result) => {
+
+								if(result.value){
+
+									window.location = "menu-detalle";
+								}
+							})
+
+					</script>';
+				}
+			}
+		}	
+
 }

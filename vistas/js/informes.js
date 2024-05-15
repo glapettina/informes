@@ -979,9 +979,10 @@ $(".btnInformeTercero").click(function(){
 	var materia = $(this).attr("mat");
 	var tabla = $(this).attr("tabla");
 	var periodo = $(this).attr("periodo");
+	var modalidad = $(this).attr("modalidad");
 	
 	
-	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia+"&modalidad="+modalidad, "_blank");
 	
 	})	
 
@@ -1106,7 +1107,7 @@ $(".tablas").on("click", ".btnImprimirInformeTercero", function(){
 
 
 
-	window.open("extensiones/tcpdf/pdf/"+informe+".php?id="+idAlumno+"&tabla="+tabla+"&informe="+informe+"&periodo="+periodo+"&modalidad="+modalidad, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?id="+idAlumno+"&tabla="+tabla+"&informe="+informe+"&modalidad="+modalidad+"&periodo="+periodo, "_blank");
 
 })
 

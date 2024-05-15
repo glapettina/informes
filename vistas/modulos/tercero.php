@@ -129,13 +129,7 @@
 
                             }
 
-                            if ($_SESSION["ciclo"] == "Superior Alimentación") {
-                              echo'<button class="btn btn-primary btnImprimirInformeTercero" periodo="'.$_SESSION['periodo'].'" informe="informe_tercero" modalidad="alimentacion" tabla="tercero" idAlumno="'.$value["id"].'" data-toggle="modal" data-target="#modalImprimirInformeCb"><i class="fa fa-print"></i></button>';
-
-                            }else {
-                              echo'<button class="btn btn-primary btnImprimirInformeTercero" periodo="'.$_SESSION['periodo'].'" informe="informe_tercero" modalidad="electromecanica" tabla="tercero" idAlumno="'.$value["id"].'" data-toggle="modal" data-target="#modalImprimirInformeCb"><i class="fa fa-print"></i></button>';
-
-                            }
+                            echo'<button class="btn btn-primary btnImprimirInformeTercero" periodo="'.$_SESSION['periodo'].'" informe="informe_tercero" modalidad="alimentacion" tabla="tercero" idAlumno="'.$value["id"].'" data-toggle="modal" data-target="#modalImprimirInformeCb"><i class="fa fa-print"></i></button>';
 
 
 
