@@ -21,10 +21,25 @@
   <div class="content-wrapper">
     
     <section class="content-header">
-      <h1>
-        1º Tercera - Turno Tarde - Materia: <?php echo $mate["materia"]; ?>
-        
-      </h1>
+            <?php
+
+                  if ($_SESSION['perfil'] == 'Docente'){
+
+                  echo '<h1>
+
+                  1º Tercera - Turno Tarde - Materia: '.$mate["materia"].'
+
+                  </h1>';
+
+                  }else{
+
+                  echo '<h1>
+                  1º Tercera - Turno Tarde
+
+                  </h1>';
+                  }
+
+        ?>  
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">1º Tercera TT</li>

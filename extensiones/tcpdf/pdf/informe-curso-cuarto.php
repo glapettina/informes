@@ -435,47 +435,15 @@ foreach ($respuestaInforme as $key => $value) {
 
 		}
 
-		if ($_GET["materia"] == "Física") {
 
-			$materia = "FÍSICA";
+		if ($_GET["materia"] == "Inglés Técnico") {
 
-			$aulico = $value["aulico_fisica"];
-			$comportamiento = $value["comportamiento_fisica"];
-			$evaluacion = $value["evaluacion_fisica"];
-			$observa = $value["observa_fisica"];
+			$materia = "INGLÉS TÉCNICO";
 
-		}
-
-		if ($_GET["materia"] == "Geografía") {
-
-			$materia = "GEOGRAFÍA";
-
-			$aulico = $value["aulico_geografia"];
-			$comportamiento = $value["comportamiento_geografia"];
-			$evaluacion = $value["evaluacion_geografia"];
-			$observa = $value["observa_geografia"];
-
-		}
-
-		if ($_GET["materia"] == "Historia") {
-
-			$materia = "HISTORIA";
-
-			$aulico = $value["aulico_historia"];
-			$comportamiento = $value["comportamiento_historia"];
-			$evaluacion = $value["evaluacion_historia"];
-			$observa = $value["observa_historia"];
-
-		}
-
-		if ($_GET["materia"] == "Inglés") {
-
-			$materia = "INGLÉS";
-
-			$aulico = $value["aulico_ingles"];
-			$comportamiento = $value["comportamiento_ingles"];
-			$evaluacion = $value["evaluacion_ingles"];
-			$observa = $value["observa_ingles"];
+			$aulico = $value["aulico_itecnico"];
+			$comportamiento = $value["comportamiento_itecnico"];
+			$evaluacion = $value["evaluacion_itecnico"];
+			$observa = $value["observa_itecnico"];
 
 		}
 
@@ -490,25 +458,135 @@ foreach ($respuestaInforme as $key => $value) {
 
 		}
 
-		if ($_GET["materia"] == "Matemática") {
+		if ($_GET["materia"] == "Operaciones Unitarias") {
 
-			$materia = "MATEMÁTICA";
+			$materia = "OPERACIONES UNITARIAS";
 
-			$aulico = $value["aulico_matematica"];
-			$comportamiento = $value["comportamiento_matematica"];
-			$evaluacion = $value["evaluacion_matematica"];
-			$observa = $value["observa_matematica"];
+			$aulico = $value["aulico_unitarias"];
+			$comportamiento = $value["comportamiento_unitarias"];
+			$evaluacion = $value["evaluacion_unitarias"];
+			$observa = $value["observa_unitarias"];
 
 		}
 
-		if ($_GET["materia"] == "Química") {
+		if ($_GET["materia"] == "Química Inorgánica") {
 
-			$materia = "QUÍMICA";
+			$materia = "QUÍMICA INORGÁNICA";
 
-			$aulico = $value["aulico_quimica"];
-			$comportamiento = $value["comportamiento_quimica"];
-			$evaluacion = $value["evaluacion_quimica"];
-			$observa = $value["observa_quimica"];
+			$aulico = $value["aulico_inorganica"];
+			$comportamiento = $value["comportamiento_inorganica"];
+			$evaluacion = $value["evaluacion_inorganica"];
+			$observa = $value["observa_inorganica"];
+
+		}
+
+		if ($_GET["materia"] == "Química Orgánica") {
+
+			$materia = "QUÍMICA ORGÁNICA";
+
+			$aulico = $value["aulico_organica"];
+			$comportamiento = $value["comportamiento_organica"];
+			$evaluacion = $value["evaluacion_organica"];
+			$observa = $value["observa_organica"];
+
+		}
+
+		if ($_GET["materia"] == "Seguridad e Higiene Industrial y Medio Ambiente") {
+
+			$materia = "SEGURIDAD E HIGIENE INDUSTRIAL Y MEDIO AMBIENTE";
+
+			$aulico = $value["aulico_sambiente"];
+			$comportamiento = $value["comportamiento_sambiente"];
+			$evaluacion = $value["evaluacion_sambiente"];
+			$observa = $value["observa_sambiente"];
+
+		}
+
+		if ($_GET["materia"] == "Tecnología de Control") {
+
+			$materia = "TECNOLOGÍA DE CONTROL";
+
+			$aulico = $value["aulico_tcontrol"];
+			$comportamiento = $value["comportamiento_tcontrol"];
+			$evaluacion = $value["evaluacion_tcontrol"];
+			$observa = $value["observa_tcontrol"];
+
+		}
+
+		if ($_GET["materia"] == "T.P. de Química Inorgánica") {
+
+			$materia = "T.P. DE QUÍMICA INORGÁNICA";
+
+			$aulico = $value["aulico_tpinorganica"];
+			$comportamiento = $value["comportamiento_tpinorganica"];
+			$evaluacion = $value["evaluacion_tpinorganica"];
+			$observa = $value["observa_tpinorganica"];
+
+		}
+
+		if ($_GET["materia"] == "T.P. de Química Orgánica") {
+
+			$materia = "T.P. DE QUÍMICA ORGÁNICA";
+
+			$aulico = $value["aulico_tporganica"];
+			$comportamiento = $value["comportamiento_tporganica"];
+			$evaluacion = $value["evaluacion_tporganica"];
+			$observa = $value["observa_tporganica"];
+
+		}
+
+		if ($_GET["materia"] == "Trabajo y Pensamiento Crítico") {
+
+			$materia = "TRABAJO Y PENSAMIENTO CRÍTICO";
+
+			$aulico = $value["aulico_trabajo"];
+			$comportamiento = $value["comportamiento_trabajo"];
+			$evaluacion = $value["evaluacion_trabajo"];
+			$observa = $value["observa_trabajo"];
+
+		}
+
+		if ($_GET["materia"] == "Electrotecnia") {
+
+			$materia = "ELECTROTECNIA";
+
+			$aulico = $value["aulico_electrotecnia"];
+			$comportamiento = $value["comportamiento_electrotecnia"];
+			$evaluacion = $value["evaluacion_electrotecnia"];
+			$observa = $value["observa_electrotecnia"];
+
+		}
+
+		if ($_GET["materia"] == "Laboratorio de Mediciones Eléctricas") {
+
+			$materia = "LABORATORIO DE MEDICIONES ELÉCTRICAS";
+
+			$aulico = $value["aulico_melectricas"];
+			$comportamiento = $value["comportamiento_melectricas"];
+			$evaluacion = $value["evaluacion_melectricas"];
+			$observa = $value["observa_melectricas"];
+
+		}
+
+		if ($_GET["materia"] == "Mecánica Técnica") {
+
+			$materia = "MECÁNICA TÉCNICA";
+
+			$aulico = $value["aulico_mtecnica"];
+			$comportamiento = $value["comportamiento_mtecnica"];
+			$evaluacion = $value["evaluacion_mtecnica"];
+			$observa = $value["observa_mtecnica"];
+
+		}
+
+		if ($_GET["materia"] == "Resistencia de los Materiales") {
+
+			$materia = "RESISTENCIA DE LOS MATERIALES";
+
+			$aulico = $value["aulico_resistencia"];
+			$comportamiento = $value["comportamiento_resistencia"];
+			$evaluacion = $value["evaluacion_resistencia"];
+			$observa = $value["observa_resistencia"];
 
 		}
 
@@ -523,27 +601,17 @@ foreach ($respuestaInforme as $key => $value) {
 
 		}
 
-		if ($_GET["materia"] == "Química General") {
+		if ($_GET["materia"] == "Tecnología de los Materiales") {
 
-			$materia = "QUÍMICA GENERAL";
+			$materia = "TECNOLOGÍA DE LOS MATERIALES";
 
-			$aulico = $value["aulico_quimica_general"];
-			$comportamiento = $value["comportamiento_quimica_general"];
-			$evaluacion = $value["evaluacion_quimica_general"];
-			$observa = $value["observa_quimica_general"];
-
-		}
-
-		if ($_GET["materia"] == "Estática") {
-
-			$materia = "ESTÁTICA";
-
-			$aulico = $value["aulico_estatica"];
-			$comportamiento = $value["comportamiento_estatica"];
-			$evaluacion = $value["evaluacion_estatica"];
-			$observa = $value["observa_estatica"];
+			$aulico = $value["aulico_tmateriales"];
+			$comportamiento = $value["comportamiento_tmateriales"];
+			$evaluacion = $value["evaluacion_tmateriales"];
+			$observa = $value["observa_tmateriales"];
 
 		}
+
 
 //----------------------------------------------------------------------------------
 

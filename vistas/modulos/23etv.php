@@ -41,15 +41,15 @@
               <?php
 
                   if ($_SESSION["perfil"] != "Preceptor") {
-                    
-                      echo '<div class="box-header with-border">                                      
+                                                                        
+                    echo '<div class="box-header with-border">                                      
 
-                        <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="primero" informe="informe-curso-primero">
-                          
-                          Informes Curso
-                        </button>
+                      <button class="btn btn-primary btnInformeCuarto" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=19 tabla="cuarto" informe="informe-curso-cuarto">
                         
-                      </div>';
+                        Informes Curso
+                      </button>
+                      
+                    </div>';
 
                   }
 

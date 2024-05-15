@@ -21,11 +21,25 @@
   <div class="content-wrapper">
     
     <section class="content-header">
-      <h1>
-      
-      2º Primera Electromecánica - Turno Vespertino - Materia: <?php echo $mate["materia"]; ?>
-        
-      </h1>
+            <?php
+
+                  if ($_SESSION['perfil'] == 'Docente'){
+
+                  echo '<h1>
+
+                  2º Primera Electromecánica - Turno Vespertino - Materia: '.$mate["materia"].'
+
+                  </h1>';
+
+                  }else{
+
+                  echo '<h1>
+                  2º Primera Electromecánica - Turno Vespertino
+
+                  </h1>';
+                  }
+
+        ?>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">2º Primera E TV</li>
@@ -41,15 +55,15 @@
               <?php
 
                   if ($_SESSION["perfil"] != "Preceptor") {
-                    
-                      echo '<div class="box-header with-border">                                      
+                                                      
+                    echo '<div class="box-header with-border">                                      
 
-                        <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="primero" informe="informe-curso-primero">
-                          
-                          Informes Curso
-                        </button>
+                      <button class="btn btn-primary btnInformeCuarto" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=17 tabla="cuarto" informe="informe-curso-cuarto">
                         
-                      </div>';
+                        Informes Curso
+                      </button>
+                      
+                    </div>';
 
                   }
 

@@ -974,20 +974,14 @@ $(".btnInformeTercero").click(function(){
 	//$(".tablas").on("click", ".btnInformeArea", function(){
 	
 	
-		var idCurso = $(this).attr("idCurso");
-		var idCurso2 = $(this).attr("idCurso2");
-		var idCurso3 = $(this).attr("idCurso3");
-		var idCurso4 = $(this).attr("idCurso4");
-		var informe = $(this).attr("informe");
-		var ciclo = $(this).attr("ciclo");
-		var curso = $(this).attr("curso");
-		var materia = $(this).attr("materia");
-		var tabla = $(this).attr("tabla");
-		var periodo = $(this).attr("periodo");
-		var modalidad = $(this).attr("modalidad");
+	var idCurso = $(this).attr("idCurso");
+	var informe = $(this).attr("informe");
+	var materia = $(this).attr("mat");
+	var tabla = $(this).attr("tabla");
+	var periodo = $(this).attr("periodo");
 	
 	
-		window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&idCurso2="+idCurso2+"&idCurso3="+idCurso3+"&idCurso4="+idCurso4+"&periodo="+periodo+"&materia="+materia+"&modalidad="+modalidad, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia, "_blank");
 	
 	})	
 
@@ -1000,20 +994,14 @@ $(".btnInformeCuarto").click(function(){
 	//$(".tablas").on("click", ".btnInformeArea", function(){
 	
 	
-		var idCurso = $(this).attr("idCurso");
-		var idCurso2 = $(this).attr("idCurso2");
-		var idCurso3 = $(this).attr("idCurso3");
-		var idCurso4 = $(this).attr("idCurso4");
-		var informe = $(this).attr("informe");
-		var ciclo = $(this).attr("ciclo");
-		var curso = $(this).attr("curso");
-		var materia = $(this).attr("materia");
-		var tabla = $(this).attr("tabla");
-		var periodo = $(this).attr("periodo");
-		var modalidad = $(this).attr("modalidad");
+	var idCurso = $(this).attr("idCurso");
+	var informe = $(this).attr("informe");
+	var materia = $(this).attr("mat");
+	var tabla = $(this).attr("tabla");
+	var periodo = $(this).attr("periodo");
 	
 	
-		window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&idCurso2="+idCurso2+"&idCurso3="+idCurso3+"&idCurso4="+idCurso4+"&periodo="+periodo+"&materia="+materia+"&modalidad="+modalidad, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia, "_blank");
 	
 	})	
 
@@ -1026,20 +1014,14 @@ $(".btnInformeQuinto").click(function(){
 	//$(".tablas").on("click", ".btnInformeArea", function(){
 	
 	
-		var idCurso = $(this).attr("idCurso");
-		var idCurso2 = $(this).attr("idCurso2");
-		var idCurso3 = $(this).attr("idCurso3");
-		var idCurso4 = $(this).attr("idCurso4");
-		var informe = $(this).attr("informe");
-		var ciclo = $(this).attr("ciclo");
-		var curso = $(this).attr("curso");
-		var materia = $(this).attr("materia");
-		var tabla = $(this).attr("tabla");
-		var periodo = $(this).attr("periodo");
-		var modalidad = $(this).attr("modalidad");
+	var idCurso = $(this).attr("idCurso");
+	var informe = $(this).attr("informe");
+	var materia = $(this).attr("mat");
+	var tabla = $(this).attr("tabla");
+	var periodo = $(this).attr("periodo");
 	
 	
-		window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&idCurso2="+idCurso2+"&idCurso3="+idCurso3+"&idCurso4="+idCurso4+"&periodo="+periodo+"&materia="+materia+"&modalidad="+modalidad, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia, "_blank");
 	
 	})		
 

@@ -15,7 +15,7 @@
 
 		<?php
 
-				if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Preceptor" || $_SESSION["perfil"] == "Directivo") {
+				if ($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Directivo") {
 
 					echo '<li class="treeview">
 			          <a href="#">
@@ -62,7 +62,7 @@
 
 <?php
 
-if ($_SESSION["perfil"] == "Docente") {
+if ($_SESSION["perfil"] == "Docente" || $_SESSION["perfil"] == "Preceptor") {
 
 
 	  echo'<li class="treeview">

@@ -21,11 +21,25 @@
   <div class="content-wrapper">
     
     <section class="content-header">
-      <h1>
-      
-      4º Primera Electromecánica - Turno Vespertino - Materia: <?php echo $mate["materia"]; ?>
-        
-      </h1>
+            <?php
+
+                  if ($_SESSION['perfil'] == 'Docente'){
+
+                  echo '<h1>
+
+                  4º Primera Electromecánica - Turno Vespertino - Materia: '.$mate["materia"].'
+
+                  </h1>';
+
+                  }else{
+
+                  echo '<h1>
+                  4º Primera Electromecánica - Turno Vespertino
+
+                  </h1>';
+                  }
+
+        ?>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">4º Primera E TV</li>
