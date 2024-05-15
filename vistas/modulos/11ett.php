@@ -21,11 +21,25 @@
   <div class="content-wrapper">
     
     <section class="content-header">
-      <h1>
-      
-      1º Primera Electromecánica - Turno Tarde - Materia: <?php echo $mate["materia"]; ?>
-        
-      </h1>
+              <?php
+
+                    if ($_SESSION['perfil'] == 'Docente'){
+
+                    echo '<h1>
+
+                    1º Primera Electromecánica - Turno Tarde - Materia: '.$mate["materia"].'
+
+                    </h1>';
+
+                    }else{
+
+                    echo '<h1>
+                    1º Primera Electromecánica - Turno Tarde
+
+                    </h1>';
+                    }
+
+          ?>
       <ol class="breadcrumb">
         <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">1º Primera E TT</li>
@@ -122,6 +136,9 @@
                            
                             
                              
+                            }else{
+
+                              echo'<button class="btn btn-primary btnImprimirInformeTercero" periodo="'.$_SESSION['periodo'].'" informe="informe_tercero" modalidad="electromecanica" tabla="tercero" idAlumno="'.$value["id"].'" data-toggle="modal" data-target="#modalImprimirInformeCb"><i class="fa fa-print"></i></button>';
                             }
 
                            
