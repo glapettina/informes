@@ -1125,9 +1125,9 @@ $(".tablas").on("click", ".btnImprimirInformeCuarto", function(){
 	var periodo = $(this).attr("periodo");
 	var modalidad = $(this).attr("modalidad");
 
-	console.log(modalidad);
 
-	window.open("extensiones/tcpdf/pdf/"+informe+".php?id="+idAlumno+"&tabla="+tabla+"&informe="+informe+"&periodo="+periodo+"&modalidad="+modalidad, "_blank");
+
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?id="+idAlumno+"&tabla="+tabla+"&informe="+informe+"&modalidad="+modalidad+"&periodo="+periodo, "_blank");
 
 })
 

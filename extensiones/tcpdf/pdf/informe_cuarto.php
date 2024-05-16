@@ -39,10 +39,10 @@ class imprimirReporte{
 
 		if ($per[0] == '01') {
 			
-			$titulo = 'CENTRO DE EDUCACIÓN TÉCNICA Nº 13 - INFORME DE AVANCE - OCTUBRE ' .$per2;
+			$titulo = 'CENTRO DE EDUCACIÓN TÉCNICA Nº 13 - INFORME DE AVANCE - MAYO ' .$per2;
 		}else{
 
-			$titulo = 'CENTRO DE EDUCACIÓN TÉCNICA Nº 13 - INFORME DE AVANCE - OCTUBRE ' .$per2;
+			$titulo = 'CENTRO DE EDUCACIÓN TÉCNICA Nº 13 - INFORME DE AVANCE - MAYO ' .$per2;
 		}
 		
 
@@ -69,7 +69,7 @@ class imprimirReporte{
 require_once('tcpdf_include.php');
 
 
-$pdf = new TCPDF('V', PDF_UNIT, 'A4', true, 'UTF-8', false);
+$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
  
 
 
@@ -102,7 +102,7 @@ $bloque1 = <<<EOF
 
 		<tr>
 
-			<td style="width: 530px"><img src="images/header2.png"></td>
+			<td style="width: 760px"><img src="images/header2.png"></td>
 
 			
 			
@@ -131,7 +131,7 @@ $bloque2 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:530px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:760px">
 
 				<br>
 
@@ -164,7 +164,7 @@ $bloque3 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:230px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:330px">
 
 				<br>
 
@@ -173,7 +173,7 @@ $bloque3 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
 
 				<br>
 
@@ -182,7 +182,7 @@ $bloque3 = <<<EOF
 
 			</td>		
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
 
 				<br>
 
@@ -191,7 +191,7 @@ $bloque3 = <<<EOF
 
 			</td>			
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:144px">
 
 			<br>
 
@@ -223,7 +223,7 @@ $bloque4 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:230px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:330px">
 
 				<br>
 
@@ -234,7 +234,7 @@ $bloque4 = <<<EOF
 
 
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -243,7 +243,7 @@ $bloque4 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -252,7 +252,7 @@ $bloque4 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:100px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:144px">
 
 			<br>
 
@@ -306,11 +306,27 @@ $bloque5 = <<<EOF
 
 				<br>
 
-				CONCEPTO
+				TRABAJO AÚLICO
 
 			</td>
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:250px">
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+				<br>
+
+				COMPORTAMIENTO
+
+			</td>
+
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+				<br>
+
+				EVALUACIÓN
+
+			</td>
+
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:280px">
 
 				<br>
 
@@ -331,7 +347,7 @@ $pdf->writeHTML($bloque5, false, false, false, false, '');
 
 //--------------------------------------------------------
 
-if ($modal == "alimentacion"){
+if ($modalidad == "Alimentación"){
 
 //----------------------------------------------------------------------------------
 
@@ -355,17 +371,31 @@ $bloque6 = <<<EOF
 
 			</td>
 
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
 
+				<br>
+
+				$respuestaInforme[aulico_analisis]
+
+			</td>
 
 			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
 
 				<br>
 
-				$respuestaInforme[concepto_analisis]
+				$respuestaInforme[comportamiento_analisis]
 
 			</td>
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_analisis]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -414,12 +444,28 @@ $bloque7 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_biologia]
+				$respuestaInforme[aulico_biologia]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_biologia]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_biologia]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -468,12 +514,28 @@ $bloque8 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_edfisica]
+				$respuestaInforme[aulico_edfisica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_edfisica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_edfisica]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -522,16 +584,32 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_fisica]
+				$respuestaInforme[aulico_faplicada]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_faplicada]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_faplicada]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_fisica]
+				$respuestaInforme[observa_faplicada]
 
 			</td>	
 
@@ -576,15 +654,31 @@ $bloque10 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_ingles]
+				$respuestaInforme[aulico_itecnico]
 
 			</td>
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
 
 				<br>
 
-				$respuestaInforme[observa_ingles]
+				$respuestaInforme[comportamiento_itecnico]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_itecnico]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+				<br>
+
+				$respuestaInforme[observa_itecnico]
 
 			</td>	
 
@@ -629,11 +723,27 @@ $bloque11 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_lengua]
+				$respuestaInforme[aulico_lengua]
 
 			</td>
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_lengua]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_lengua]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -682,16 +792,32 @@ $bloque12 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_operaciones]
+				$respuestaInforme[aulico_unitarias]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_unitarias]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_unitarias]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_operaciones]
+				$respuestaInforme[observa_unitarias]
 
 			</td>	
 
@@ -736,16 +862,32 @@ $bloque13 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_inorganica]
+				$respuestaInforme[aulico_qinorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_qinorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_qinorganica]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_inorganica]
+				$respuestaInforme[observa_qinorganica]
 
 			</td>	
 
@@ -790,16 +932,32 @@ $bloque14 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_organica]
+				$respuestaInforme[aulico_qorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_qorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_qorganica]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_organica]
+				$respuestaInforme[observa_qorganica]
 
 			</td>	
 
@@ -844,16 +1002,32 @@ $bloque15 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_seguridad]
+				$respuestaInforme[aulico_sambiente]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_sambiente]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_sambiente]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_seguridad]
+				$respuestaInforme[observa_sambiente]
 
 			</td>	
 
@@ -899,16 +1073,32 @@ $bloque16 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_tecnologia]
+				$respuestaInforme[aulico_tcontrol]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_tcontrol]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_tcontrol]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_tecnologia]
+				$respuestaInforme[observa_tcontrol]
 
 			</td>	
 
@@ -953,12 +1143,28 @@ $bloque17 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_tpinorganica]
+				$respuestaInforme[aulico_tpinorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_tpinorganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_tpinorganica]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -1007,12 +1213,28 @@ $bloque18 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_tporganica]
+				$respuestaInforme[aulico_tporganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_tporganica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_tporganica]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -1061,12 +1283,28 @@ $bloque19 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[concepto_trabajo]
+				$respuestaInforme[aulico_trabajo]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_trabajo]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_trabajo]
 
 			</td>
 
 
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
@@ -1116,11 +1354,27 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_analisis]
+			$respuestaInforme[aulico_analisis]
 
 		</td>
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_analisis]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_analisis]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1169,12 +1423,28 @@ $bloque7 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_edfisica]
+			$respuestaInforme[aulico_edfisica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_edfisica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_edfisica]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1223,12 +1493,28 @@ $bloque8 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_electrotecnia]
+			$respuestaInforme[aulico_electrotecnia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_electrotecnia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_electrotecnia]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1277,16 +1563,32 @@ $bloque9 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_ingles]
+			$respuestaInforme[aulico_itecnico]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_itecnico]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_itecnico]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
-			$respuestaInforme[observa_ingles]
+			$respuestaInforme[observa_itecnico]
 
 		</td>	
 
@@ -1331,15 +1633,31 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_laboratorio]
+			$respuestaInforme[aulico_melectricas]
 
 		</td>
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
 
 			<br>
 
-			$respuestaInforme[observa_laboratorio]
+			$respuestaInforme[comportamiento_melectricas]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_melectricas]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+			<br>
+
+			$respuestaInforme[observa_melectricas]
 
 		</td>	
 
@@ -1384,11 +1702,27 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_lengua]
+			$respuestaInforme[aulico_lengua]
 
 		</td>
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_lengua]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_lengua]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1437,16 +1771,32 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_mecanica]
+			$respuestaInforme[aulico_mtecnica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_mtecnica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_mtecnica]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
-			$respuestaInforme[observa_mecanica]
+			$respuestaInforme[observa_mtecnica]
 
 		</td>	
 
@@ -1491,12 +1841,28 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_resistencia]
+			$respuestaInforme[aulico_resistencia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_resistencia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_resistencia]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1545,12 +1911,28 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_taller]
+			$respuestaInforme[aulico_taller]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_taller]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_taller]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
@@ -1599,16 +1981,32 @@ $bloque15 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_materiales]
+			$respuestaInforme[aulico_tmateriales]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_tmateriales]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_tmateriales]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
-			$respuestaInforme[observa_materiales]
+			$respuestaInforme[observa_tmateriales]
 
 		</td>	
 
@@ -1655,12 +2053,28 @@ $bloque17 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[concepto_trabajo]
+			$respuestaInforme[aulico_trabajo]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_trabajo]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_trabajo]
 
 		</td>
 
 
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:250px">
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 			<br>
 
