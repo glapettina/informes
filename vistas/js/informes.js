@@ -668,15 +668,15 @@ $(".tablas").on("click", ".btnEditarInformePrimero", function(){
 
 	if (materia == 'Química General') {
 
-		var campo1 = 'aulico_qgeneral'; 
-		var campo2 = 'comportamiento_qgeneral'; 
-		var campo3 = 'evaluacion_qgeneral'; 
-		var campo4 = 'observa_qgeneral'; 
+		var campo1 = 'aulico_quimica_general'; 
+		var campo2 = 'comportamiento_quimica_general'; 
+		var campo3 = 'evaluacion_quimica_general'; 
+		var campo4 = 'observa_quimica_general'; 
 
-		var id1 = '#aulicoQgeneral';
-		var id2 = '#comportamientoQgeneral';
-		var id3 = '#evaluacionQgeneral';
-		var id4 = '#observaQgeneral';
+		var id1 = '#aulicoQuimicaGeneral';
+		var id2 = '#comportamientoQuimicaGeneral';
+		var id3 = '#evaluacionQuimicaGeneral';
+		var id4 = '#observaQuimicaGeneral';
 		
 	}
 

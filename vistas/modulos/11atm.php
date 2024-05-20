@@ -498,7 +498,7 @@
       
 
               $tabla = "tercero";
-              $curso = "11etm";
+              $curso = "11atm";
 
               $editarInforme = new ControladorInformes();
               $editarInforme -> ctrEditarInformePrimero($tabla, $curso, $aulico, $comportamiento, $evaluacion, $observa, $campo1, $campo2, $campo3, $campo4);
