@@ -295,7 +295,7 @@
 
                     } 
 
-                    if ($mat == 'Laboratorio de Ensayo Industriales') {
+                    if ($mat == 'Laboratorio de Ensayos Industriales') {
                     
                       $aulico = 'aulicoEindustriales';
                       $comportamiento = 'comportamientoEindustriales';
