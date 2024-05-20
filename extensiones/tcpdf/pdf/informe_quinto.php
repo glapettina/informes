@@ -19,9 +19,9 @@ class imprimirReporte{
 
 		// TRAEMOS LA INFORMACION DE LOS INFORMES
 
-		if ($_GET["tabla"] == "tercero") {
+		if ($_GET["tabla"] == "quinto") {
 			
-			$tablaInforme = "tercero";
+			$tablaInforme = "quinto";
 		}
 
 
@@ -57,7 +57,7 @@ class imprimirReporte{
 
 		$itemCurso = "id";
 		$valorCurso = $respuestaInforme["id_curso"];
-		$tablaCurso = "tercero";
+		$tablaCurso = "quinto";
 
 		$respuestaCurso = ControladorCursos::ctrMostrarCursos($itemCurso, $valorCurso, $tablaCurso);
 
@@ -347,7 +347,7 @@ $pdf->writeHTML($bloque5, false, false, false, false, '');
 
 //--------------------------------------------------------
 
-if ($modal == "Alimentación"){
+if ($modalidad == "Alimentación"){
 
 //----------------------------------------------------------------------------------
 
@@ -356,6 +356,9 @@ $bloque6 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
+	
+
+		
 
 		<tr>
 
@@ -363,18 +366,8 @@ $bloque6 = <<<EOF
 
 				<br>
 
-				BIOLOGÍA
+				COMUNICACIÓN ORAL Y ESCRITA
 
-
-			</td>
-
-
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-				<br>
-
-				$respuestaInforme[aulico_biologia]
 
 			</td>
 
@@ -382,7 +375,7 @@ $bloque6 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_biologia]
+				$respuestaInforme[aulico_comunicacion]
 
 			</td>
 
@@ -390,7 +383,15 @@ $bloque6 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_biologia]
+				$respuestaInforme[comportamiento_comunicacion]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_comunicacion]
 
 			</td>
 
@@ -398,7 +399,7 @@ $bloque6 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[observa_biologia]
+				$respuestaInforme[observa_comunicacion]
 
 			</td>	
 
@@ -419,6 +420,76 @@ $pdf->writeHTML($bloque6, false, false, false, false, '');
 
 
 $bloque7 = <<<EOF
+
+	<table style="font-size:10px; padding:5px 10px;">
+
+	
+
+		
+
+		<tr>
+
+			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+				<br>
+
+				DISEÑOS DE ENVASES
+
+
+			</td>
+
+
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[aulico_disenio]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_disenio]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_disenio]
+
+			</td>
+
+
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+				<br>
+
+				$respuestaInforme[observa_disenio]
+
+			</td>	
+
+
+
+		</tr>
+
+	</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque7, false, false, false, false, '');
+
+//--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque8 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
@@ -481,76 +552,6 @@ $bloque7 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque7, false, false, false, false, '');
-
-//--------------------------------------------------------
-
-//----------------------------------------------------------------------------------
-
-
-$bloque8 = <<<EOF
-
-	<table style="font-size:10px; padding:5px 10px;">
-
-	
-
-		
-
-		<tr>
-
-			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
-
-				<br>
-
-				EDUCACIÓN PARA LA CIUDADANÍA
-
-
-			</td>
-
-
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-				<br>
-
-				$respuestaInforme[aulico_ciudadania]
-
-			</td>
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-				<br>
-
-				$respuestaInforme[comportamiento_ciudadania]
-
-			</td>
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-				<br>
-
-				$respuestaInforme[evaluacion_ciudadania]
-
-			</td>
-
-
-			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
-
-				<br>
-
-				$respuestaInforme[observa_ciudadania]
-
-			</td>	
-
-
-
-		</tr>
-
-	</table>
-
-EOF;
-
-
 $pdf->writeHTML($bloque8, false, false, false, false, '');
 
 //--------------------------------------------------------
@@ -572,7 +573,7 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				FÍSICA
+				INGLÉS TÉCNICO
 
 
 			</td>
@@ -583,7 +584,7 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_fisica]
+				$respuestaInforme[aulico_itecnico]
 
 			</td>
 
@@ -591,7 +592,7 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_fisica]
+				$respuestaInforme[comportamiento_itecnico]
 
 			</td>
 
@@ -599,7 +600,7 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_fisica]
+				$respuestaInforme[evaluacion_itecnico]
 
 			</td>
 
@@ -608,7 +609,7 @@ $bloque9 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[observa_fisica]
+				$respuestaInforme[observa_itecnico]
 
 			</td>	
 
@@ -632,17 +633,13 @@ $bloque10 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				GEOGRAFÍA
+				MATEMÁTICA APLICADA
 
 
 			</td>
@@ -653,7 +650,7 @@ $bloque10 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_geografia]
+				$respuestaInforme[aulico_maplicada]
 
 			</td>
 
@@ -661,7 +658,7 @@ $bloque10 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_geografia]
+				$respuestaInforme[comportamiento_maplicada]
 
 			</td>
 
@@ -669,7 +666,7 @@ $bloque10 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_geografia]
+				$respuestaInforme[evaluacion_maplicada]
 
 			</td>
 
@@ -677,7 +674,7 @@ $bloque10 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[observa_geografia]
+				$respuestaInforme[observa_maplicada]
 
 			</td>	
 
@@ -701,17 +698,13 @@ $bloque11 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				HISTORIA
+				MICROBIOLOGÍA
 
 
 			</td>
@@ -722,7 +715,7 @@ $bloque11 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_historia]
+				$respuestaInforme[aulico_microbiologia]
 
 			</td>
 
@@ -730,7 +723,7 @@ $bloque11 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_historia]
+				$respuestaInforme[comportamiento_microbiologia]
 
 			</td>
 
@@ -738,7 +731,7 @@ $bloque11 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_historia]
+				$respuestaInforme[evaluacion_microbiologia]
 
 			</td>
 
@@ -746,7 +739,7 @@ $bloque11 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[observa_historia]
+				$respuestaInforme[observa_microbiologia]
 
 			</td>	
 
@@ -770,17 +763,13 @@ $bloque12 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				INGLÉS
+				PROCESOS PRODUCTIVOS
 
 
 			</td>
@@ -791,7 +780,7 @@ $bloque12 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_ingles]
+				$respuestaInforme[aulico_pproductivos]
 
 			</td>
 
@@ -799,7 +788,7 @@ $bloque12 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_ingles]
+				$respuestaInforme[comportamiento_pproductivos]
 
 			</td>
 
@@ -807,16 +796,15 @@ $bloque12 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_ingles]
+				$respuestaInforme[evaluacion_pproductivos]
 
 			</td>
-
 
 			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_ingles]
+				$respuestaInforme[observa_pproductivos]
 
 			</td>	
 
@@ -840,17 +828,13 @@ $bloque13 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				LENGUA Y LITERATURA
+				QUÍMICA ANALÍTICA CUALITATIVA
 
 
 			</td>
@@ -861,7 +845,7 @@ $bloque13 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_lengua]
+				$respuestaInforme[aulico_cualitativa]
 
 			</td>
 
@@ -869,7 +853,7 @@ $bloque13 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_lengua]
+				$respuestaInforme[comportamiento_cualitativa]
 
 			</td>
 
@@ -877,16 +861,15 @@ $bloque13 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_lengua]
+				$respuestaInforme[evaluacion_cualitativa]
 
 			</td>
-
 
 			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_lengua]
+				$respuestaInforme[observa_cualitativa]
 
 			</td>	
 
@@ -910,17 +893,13 @@ $bloque14 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				MATEMÁTICA
+				QUÍMICA ANALÍTICA CUANTITATIVA
 
 
 			</td>
@@ -931,7 +910,7 @@ $bloque14 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_matematica]
+				$respuestaInforme[aulico_cuantitativa]
 
 			</td>
 
@@ -939,7 +918,7 @@ $bloque14 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_matematica]
+				$respuestaInforme[comportamiento_cuantitativa]
 
 			</td>
 
@@ -947,16 +926,15 @@ $bloque14 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_matematica]
+				$respuestaInforme[evaluacion_cuantitativa]
 
 			</td>
-
 
 			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_matematica]
+				$respuestaInforme[observa_cuantitativa]
 
 			</td>	
 
@@ -980,17 +958,13 @@ $bloque15 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-					QUÍMICA GENERAL
+				QUÍMICA BIOLÓGICA
 
 
 			</td>
@@ -1001,7 +975,7 @@ $bloque15 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_quimica_general]
+				$respuestaInforme[aulico_qbiologica]
 
 			</td>
 
@@ -1009,7 +983,7 @@ $bloque15 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_quimica_general]
+				$respuestaInforme[comportamiento_qbiologica]
 
 			</td>
 
@@ -1017,16 +991,15 @@ $bloque15 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_quimica_general]
+				$respuestaInforme[evaluacion_qbiologica]
 
 			</td>
-
 
 			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_quimica_general]
+				$respuestaInforme[observa_qbiologica]
 
 			</td>	
 
@@ -1043,7 +1016,6 @@ $pdf->writeHTML($bloque15, false, false, false, false, '');
 
 //--------------------------------------------------------
 
-
 //----------------------------------------------------------------------------------
 
 
@@ -1051,17 +1023,13 @@ $bloque16 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
 
-	
-
-		
-
 		<tr>
 
 			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
 
 				<br>
 
-				TALLER
+				TECNOLOGÍA DE LOS ALIMENTOS
 
 
 			</td>
@@ -1072,7 +1040,7 @@ $bloque16 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[aulico_taller]
+				$respuestaInforme[aulico_talimentos]
 
 			</td>
 
@@ -1080,7 +1048,7 @@ $bloque16 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[comportamiento_taller]
+				$respuestaInforme[comportamiento_talimentos]
 
 			</td>
 
@@ -1088,16 +1056,15 @@ $bloque16 = <<<EOF
 
 				<br>
 
-				$respuestaInforme[evaluacion_taller]
+				$respuestaInforme[evaluacion_talimentos]
 
 			</td>
-
 
 			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
-				$respuestaInforme[observa_taller]
+				$respuestaInforme[observa_talimentos]
 
 			</td>	
 
@@ -1113,6 +1080,75 @@ EOF;
 $pdf->writeHTML($bloque16, false, false, false, false, '');
 
 //--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque17 = <<<EOF
+
+	<table style="font-size:10px; padding:5px 10px;">
+
+		<tr>
+
+			<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+				<br>
+
+				TERMODINÁMICA
+
+
+			</td>
+
+
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[aulico_termodinamica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[comportamiento_termodinamica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+				<br>
+
+				$respuestaInforme[evaluacion_termodinamica]
+
+			</td>
+
+			<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+				<br>
+
+				$respuestaInforme[observa_termodinamica]
+
+			</td>	
+
+
+
+		</tr>
+
+	</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque17, false, false, false, false, '');
+
+//--------------------------------------------------------
+
+
+
+
 }else{
 
 //----------------------------------------------------------------------------------
@@ -1129,7 +1165,7 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			DIBUJO TÉCNICO
+			ANÁLISIS MATEMÁTICO
 
 
 		</td>
@@ -1140,7 +1176,7 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_dibujo]
+			$respuestaInforme[aulico_analisis]
 
 		</td>
 
@@ -1148,7 +1184,7 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_dibujo]
+			$respuestaInforme[comportamiento_analisis]
 
 		</td>
 
@@ -1156,7 +1192,7 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_dibujo]
+			$respuestaInforme[evaluacion_analisis]
 
 		</td>
 
@@ -1164,7 +1200,7 @@ $bloque6 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_dibujo]
+			$respuestaInforme[observa_analisis]
 
 		</td>	
 
@@ -1185,6 +1221,146 @@ $pdf->writeHTML($bloque6, false, false, false, false, '');
 
 
 $bloque7 = <<<EOF
+
+<table style="font-size:10px; padding:5px 10px;">
+
+
+
+	
+
+	<tr>
+
+		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+			<br>
+
+			CÁLCULOS DE ELEMENTOS DE MÁQUINAS
+
+
+		</td>
+
+
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[aulico_calculos]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_calculos]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_calculos]
+
+		</td>
+
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+			<br>
+
+			$respuestaInforme[observa_calculos]
+
+		</td>	
+
+
+
+	</tr>
+
+</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque7, false, false, false, false, '');
+
+//--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque8 = <<<EOF
+
+<table style="font-size:10px; padding:5px 10px;">
+
+
+
+	
+
+	<tr>
+
+		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+			<br>
+
+			COMUNICACIÓN ORAL Y ESCRITA
+
+
+		</td>
+
+
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[aulico_comunicacion]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_comunicacion]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_comunicacion]
+
+		</td>
+
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+			<br>
+
+			$respuestaInforme[observa_comunicacion]
+
+		</td>	
+
+
+
+	</tr>
+
+</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque8, false, false, false, false, '');
+
+//--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque9 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1247,146 +1423,6 @@ $bloque7 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque7, false, false, false, false, '');
-
-//--------------------------------------------------------
-
-//----------------------------------------------------------------------------------
-
-
-$bloque8 = <<<EOF
-
-<table style="font-size:10px; padding:5px 10px;">
-
-
-
-	
-
-	<tr>
-
-		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
-
-			<br>
-
-			EDUCACIÓN PARA LA CIUDADANÍA
-
-
-		</td>
-
-
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[aulico_ciudadania]
-
-		</td>
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[comportamiento_ciudadania]
-
-		</td>
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[evaluacion_ciudadania]
-
-		</td>
-
-
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
-
-			<br>
-
-			$respuestaInforme[observa_ciudadania]
-
-		</td>	
-
-
-
-	</tr>
-
-</table>
-
-EOF;
-
-
-$pdf->writeHTML($bloque8, false, false, false, false, '');
-
-//--------------------------------------------------------
-
-//----------------------------------------------------------------------------------
-
-
-$bloque9 = <<<EOF
-
-<table style="font-size:10px; padding:5px 10px;">
-
-
-
-	
-
-	<tr>
-
-		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
-
-			<br>
-
-			ESTÁTICA
-
-
-		</td>
-
-
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[aulico_estatica]
-
-		</td>
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[comportamiento_estatica]
-
-		</td>
-
-		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
-
-			<br>
-
-			$respuestaInforme[evaluacion_estatica]
-
-		</td>
-
-
-		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
-
-			<br>
-
-			$respuestaInforme[observa_estatica]
-
-		</td>	
-
-
-
-	</tr>
-
-</table>
-
-EOF;
-
-
 $pdf->writeHTML($bloque9, false, false, false, false, '');
 
 //--------------------------------------------------------
@@ -1408,7 +1444,7 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			FÍSICA
+			ELECTRÓNICA GENERAL
 
 
 		</td>
@@ -1419,7 +1455,7 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_fisica]
+			$respuestaInforme[aulico_electronica]
 
 		</td>
 
@@ -1427,7 +1463,7 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_fisica]
+			$respuestaInforme[comportamiento_electronica]
 
 		</td>
 
@@ -1435,7 +1471,7 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_fisica]
+			$respuestaInforme[evaluacion_electronica]
 
 		</td>
 
@@ -1443,7 +1479,7 @@ $bloque10 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_fisica]
+			$respuestaInforme[observa_electronica]
 
 		</td>	
 
@@ -1477,7 +1513,7 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			GEOGRAFÍA
+			INGLÉS TÉCNICO
 
 
 		</td>
@@ -1488,7 +1524,7 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_geografia]
+			$respuestaInforme[aulico_itecnico]
 
 		</td>
 
@@ -1496,7 +1532,7 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_geografia]
+			$respuestaInforme[comportamiento_itecnico]
 
 		</td>
 
@@ -1504,7 +1540,7 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_geografia]
+			$respuestaInforme[evaluacion_itecnico]
 
 		</td>
 
@@ -1512,7 +1548,7 @@ $bloque11 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_geografia]
+			$respuestaInforme[observa_itecnico]
 
 		</td>	
 
@@ -1546,7 +1582,7 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			HISTORIA
+			LABORATORIO DE MEDICIONES ELÉCTRICAS
 
 
 		</td>
@@ -1557,7 +1593,7 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_historia]
+			$respuestaInforme[aulico_melectricas]
 
 		</td>
 
@@ -1565,7 +1601,7 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_historia]
+			$respuestaInforme[comportamiento_melectricas]
 
 		</td>
 
@@ -1573,7 +1609,7 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_historia]
+			$respuestaInforme[evaluacion_melectricas]
 
 		</td>
 
@@ -1582,7 +1618,7 @@ $bloque12 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_historia]
+			$respuestaInforme[observa_melectricas]
 
 		</td>	
 
@@ -1616,7 +1652,7 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			INGLÉS
+			LEGISLACIÓN DEL TRABAJO
 
 
 		</td>
@@ -1627,7 +1663,7 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_ingles]
+			$respuestaInforme[aulico_legislacion]
 
 		</td>
 
@@ -1635,7 +1671,7 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_ingles]
+			$respuestaInforme[comportamiento_legislacion]
 
 		</td>
 
@@ -1643,7 +1679,7 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_ingles]
+			$respuestaInforme[evaluacion_legislacion]
 
 		</td>
 
@@ -1652,7 +1688,7 @@ $bloque13 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_ingles]
+			$respuestaInforme[observa_legislacion]
 
 		</td>	
 
@@ -1686,7 +1722,7 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			LENGUA Y LITERATURA
+			ORGANIZACIÓN INDUSTRIAL
 
 
 		</td>
@@ -1697,7 +1733,7 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_lengua]
+			$respuestaInforme[aulico_oindustrial]
 
 		</td>
 
@@ -1705,7 +1741,7 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_lengua]
+			$respuestaInforme[comportamiento_oindustrial]
 
 		</td>
 
@@ -1713,7 +1749,7 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_lengua]
+			$respuestaInforme[evaluacion_oindustrial]
 
 		</td>
 
@@ -1722,7 +1758,7 @@ $bloque14 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_lengua]
+			$respuestaInforme[observa_oindustrial]
 
 		</td>	
 
@@ -1756,7 +1792,7 @@ $bloque15 = <<<EOF
 
 			<br>
 
-				MATEMÁTICA
+				PRÁCTICAS PROFESIONALIZANTES
 
 
 		</td>
@@ -1767,7 +1803,7 @@ $bloque15 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_matematica]
+			$respuestaInforme[aulico_practicas]
 
 		</td>
 
@@ -1775,7 +1811,7 @@ $bloque15 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_matematica]
+			$respuestaInforme[comportamiento_practicas]
 
 		</td>
 
@@ -1783,7 +1819,7 @@ $bloque15 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_matematica]
+			$respuestaInforme[evaluacion_practicas]
 
 		</td>
 
@@ -1792,7 +1828,7 @@ $bloque15 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_matematica]
+			$respuestaInforme[observa_practicas]
 
 		</td>	
 
@@ -1810,10 +1846,11 @@ $pdf->writeHTML($bloque15, false, false, false, false, '');
 //--------------------------------------------------------
 
 
+
 //----------------------------------------------------------------------------------
 
 
-$bloque16 = <<<EOF
+$bloque17 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1827,7 +1864,7 @@ $bloque16 = <<<EOF
 
 			<br>
 
-			QUÍMICA
+			SEGURIDAD E HIGIENE INDUSTRIAL
 
 
 		</td>
@@ -1838,7 +1875,7 @@ $bloque16 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[aulico_quimica]
+			$respuestaInforme[aulico_sindustrial]
 
 		</td>
 
@@ -1846,7 +1883,7 @@ $bloque16 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[comportamiento_quimica]
+			$respuestaInforme[comportamiento_sindustrial]
 
 		</td>
 
@@ -1854,7 +1891,7 @@ $bloque16 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[evaluacion_quimica]
+			$respuestaInforme[evaluacion_sindustrial]
 
 		</td>
 
@@ -1863,7 +1900,7 @@ $bloque16 = <<<EOF
 
 			<br>
 
-			$respuestaInforme[observa_quimica]
+			$respuestaInforme[observa_sindustrial]
 
 		</td>	
 
@@ -1876,14 +1913,15 @@ $bloque16 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque16, false, false, false, false, '');
+$pdf->writeHTML($bloque17, false, false, false, false, '');
 
 //--------------------------------------------------------
+
 
 //----------------------------------------------------------------------------------
 
 
-$bloque17 = <<<EOF
+$bloque18 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1946,9 +1984,80 @@ $bloque17 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque17, false, false, false, false, '');
+$pdf->writeHTML($bloque18, false, false, false, false, '');
 
 //--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque19 = <<<EOF
+
+<table style="font-size:10px; padding:5px 10px;">
+
+
+
+	
+
+	<tr>
+
+		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+			<br>
+
+			TERMODINÁMICA
+
+
+		</td>
+
+
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[aulico_termodinamica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_termodinamica]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_termodinamica]
+
+		</td>
+
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+			<br>
+
+			$respuestaInforme[observa_termodinamica]
+
+		</td>	
+
+
+
+	</tr>
+
+</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque19, false, false, false, false, '');
+
+//--------------------------------------------------------
+
 
 
 }
