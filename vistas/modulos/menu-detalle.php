@@ -60,6 +60,7 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
                 <th>Usuario</th>
                 <th>Curso</th>
                 <th>Turno</th>
+                <th>Ciclo</th>
                 <th>Espacio Curricular</th>
                 <th>Estado</th>
                 <th>Acciones</th>
@@ -96,7 +97,8 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
                           $cur = ControladorCursos::ctrMostrarCursos($item, $valor); 
 
                           echo '<td>'.$cur["nombre"].'</td>
-                                <td>'.$cur["turno"].'</td>';
+                                <td>'.$cur["turno"].'</td>
+                                <td>'.$cur["ciclo"].'</td>';
 
                           $item = "id_materia";
                           $valor = $value["materia_id"];
