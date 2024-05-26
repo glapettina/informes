@@ -283,7 +283,7 @@
 
                     } 
                     
-                    if ($mat == 'Físico - Química') {
+                    if ($mat == 'Físico Química') {
                     
                       $aulico = 'aulicoFisicoQuimica';
                       $comportamiento = 'comportamientoFisicoQuimica';
