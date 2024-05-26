@@ -473,10 +473,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "QUÍMICA INORGÁNICA";
 
-			$aulico = $value["aulico_inorganica"];
-			$comportamiento = $value["comportamiento_inorganica"];
-			$evaluacion = $value["evaluacion_inorganica"];
-			$observa = $value["observa_inorganica"];
+			$aulico = $value["aulico_qinorganica"];
+			$comportamiento = $value["comportamiento_qinorganica"];
+			$evaluacion = $value["evaluacion_qinorganica"];
+			$observa = $value["observa_qinorganica"];
 
 		}
 
@@ -484,10 +484,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "QUÍMICA ORGÁNICA";
 
-			$aulico = $value["aulico_organica"];
-			$comportamiento = $value["comportamiento_organica"];
-			$evaluacion = $value["evaluacion_organica"];
-			$observa = $value["observa_organica"];
+			$aulico = $value["aulico_qorganica"];
+			$comportamiento = $value["comportamiento_qorganica"];
+			$evaluacion = $value["evaluacion_qorganica"];
+			$observa = $value["observa_qorganica"];
 
 		}
 
