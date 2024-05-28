@@ -122,7 +122,7 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
                             
                             <div class="btn-group">
                                 
-                              <button class="btn btn-warning btnEditarCurso" idCurso="'.$value["mend_id"].'" data-toggle="modal" data-target="#modalEditarCurso"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-warning btnEditarMenuDetalle" idMenuDetalle="'.$value["mend_id"].'" data-toggle="modal" data-target="#modalEditarMenuDetalle"><i class="fa fa-pencil"></i></button>
                               <button class="btn btn-danger btnEliminarMenuDetalle" idMenuDetalle="'.$value["mend_id"].'"><i class="fa fa-times"></i></button>
 
                             </div>
@@ -326,11 +326,11 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
 
   
   <!--=====================================
-  MODAL EDITAR CURSO
+  MODAL EDITAR MENÚ DETALLE
   ======================================-->
 
 
-<div id="modalEditarCurso" class="modal fade" role="dialog">
+<div id="modalEditarMenuDetalle" class="modal fade" role="dialog">
 
   <div class="modal-dialog">
 
@@ -346,7 +346,7 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Editar Curso</h4>
+            <h4 class="modal-title">Editar Menú Detalle</h4>
 
           </div>
 
@@ -359,55 +359,112 @@ $materias = ControladorMaterias::ctrMostrarMaterias($item, $valor);
 
             <div class="box-body">
 
-              <!-- ENTRADA PARA EL NOMBRE -->          
+              <!-- ENTRADA PARA EL PERFIL -->          
               
               <div class="form-group">
                 
-                <div class="input-group">
+              <div class="input-group">
                   
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                  <input class="form-control input-lg" type="text" name="editarCurso" id="editarCurso" required>
-                  <input type="hidden" name="idCurso" id="idCurso">
+                  <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                  
+                      <select class="form-control input-lg" name="editarPerfil">
+                        
+                        <option value="">Seleccionar Perfil</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Directivo">Directivo</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Preceptor">Preceptor</option>
+
+                      </select>
 
                 </div>
 
-              </div>  
+              </div> 
+              
+              <!-- ENTRADA PARA SELECCIONAR USUARIO -->
 
-                <!-- ENTRADA PARA EL TURNO -->
-
-                 <div class="form-group">
+              <div class="form-group">
                 
-                    <div class="input-group">
+                <div class="input-group col-lg-12">
                   
-                       <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
                   
-                       <select class="form-control input-lg" name="editarTurno" readonly required>
+                  <select class="form-control input-lg" id="editarUsuario" name="editarUsuario">
                     
-                           <option id="editarTurno"></option>                    
-                    
-                       </select>
+                    <option value="0">Usuario</option>
+
+                    <?php
+
+
+                      foreach ($usuarios as $key => $value) {
+
+                        echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                        
+                      }
+
+                    ?>
+
+                  </select>
 
                 </div>
 
               </div>
 
-              <!-- ENTRADA PARA EL CICLO -->
-
               <div class="form-group">
                 
-                <div class="input-group">
-              
-                   <span class="input-group-addon"><i class="fa fa-th"></i></span>
-              
-                   <select class="form-control input-lg" name="editarCiclo" readonly required>
-                
-                       <option id="editarCiclo"></option>                    
-                
-                   </select>
+                <div class="input-group col-lg-12">
+                  
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  
+                  <select class="form-control input-lg" id="editarCurso" name="editarCurso">
+                    
+                    <option value="0">Curso</option>
 
-            </div>
+                    <?php
 
-          </div>
+
+                      foreach ($cursos as $key => $value) {
+
+                        echo '<option value="'.$value["id"].'">'.$value["nombre"].' - '.$value["turno"].' - '.$value["ciclo"].'</option>';
+                        
+                      }
+
+                    ?>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+            <!-- ENTRADA PARA SELECCIONAR LA MATERIA -->
+
+            <div class="form-group">
+                
+                <div class="input-group col-lg-12">
+                  
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  
+                  <select class="form-control input-lg" id="editarMateria" name="editarMateria">
+                    
+                    <option value="0">Materia</option>
+
+                    <?php
+
+
+                      foreach ($materias as $key => $value) {
+
+                        echo '<option value="'.$value["id_materia"].'">'.$value["nombre"].'</option>';
+                        
+                      }
+
+                    ?>
+
+                  </select>
+
+                </div>
+
+              </div>
               
             </div>
             

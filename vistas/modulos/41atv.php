@@ -58,7 +58,7 @@
                     
                       echo '<div class="box-header with-border">                                      
 
-                        <button class="btn btn-primary btnInformePrimero" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="quinto" informe="informe-curso-primero">
+                        <button class="btn btn-primary btnInformeSexto" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="quinto" informe="informe-curso-sexto">
                           
                           Informes Curso
                         </button>

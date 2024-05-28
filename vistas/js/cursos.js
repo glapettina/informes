@@ -60,31 +60,7 @@ $(".btnEliminarCurso").click(function(){
 })
 
 
-/*=============================================
-			ELIMINAR MENÚ DETALLE            
-=============================================*/
 
-$(".btnEliminarMenuDetalle").click(function(){
-
-	var idMenuDetalle = $(this).attr("idMenuDetalle");
-
-	swal({
-		title: 'Está seguro de borrar el acceso al menú?',
-		text: "Si no lo está puede cancelar la acción",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		cancelButtonText: 'Cancelar',
-		confirmButtonText: 'Si, borrar acceso al menú'
-		}).then((result)=>{
-
-			if (result.value) {
-
-				window.location = "index.php?ruta=menu-detalle&idMenuDetalle="+idMenuDetalle;
-			}
-		})
-})
 
 
 /*=============================================

@@ -32,6 +32,41 @@ $(".btnEditarMateria").click(function(){
 
 
 /*=============================================
+EDITAR MENÚ DETALLE            
+=============================================*/
+
+$(".btnEditarMenuDetalle").click(function(){
+
+
+	var idMenuDetalle = $(this).attr("idMenuDetalle");
+
+	console.log('Pasó');
+
+	var datos = new FormData();
+	datos.append("idMenuDetalle", idMenuDetalle);
+
+	$.ajax({
+
+		url: "ajax/menu-detalle.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success: function(respuesta){
+
+
+			$("#editarPerfil").val(respuesta["perfil"]);
+			//$("#editarCiclo").val(respuesta["ciclo"]);
+			//$("#idMateria").val(respuesta["id_materia"]);
+
+		}
+	})
+})
+
+
+/*=============================================
 				ELIMINAR MATERIA            
 =============================================*/
 
@@ -115,5 +150,32 @@ $(document).on("click", ".btnActivarMateria", function(){
 		$(this).html('Activado');
 		$(this).attr('estadoMateria', 0);
 	}
+})
+
+
+/*=============================================
+			ELIMINAR MENÚ DETALLE            
+=============================================*/
+
+$(".btnEliminarMenuDetalle").click(function(){
+
+	var idMenuDetalle = $(this).attr("idMenuDetalle");
+
+	swal({
+		title: 'Está seguro de borrar el acceso al menú?',
+		text: "Si no lo está puede cancelar la acción",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		cancelButtonText: 'Cancelar',
+		confirmButtonText: 'Si, borrar acceso al menú'
+		}).then((result)=>{
+
+			if (result.value) {
+
+				window.location = "index.php?ruta=menu-detalle&idMenuDetalle="+idMenuDetalle;
+			}
+		})
 })
 

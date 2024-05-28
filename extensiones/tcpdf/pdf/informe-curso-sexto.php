@@ -163,7 +163,7 @@ class imprimirReporte{
 
 	   if ($_GET["materia"] == "Tecnología de los Alimentos") {
 
-		$materia = "TECNOLOGÍA DE LOS ALIMENTOS";
+	   $materia = "TECNOLOGÍA DE LOS ALIMENTOS";
 	   $campo1 = 'concepto_tecnologia';
 	   $campo2 = 'observa_tecnologia';
 
