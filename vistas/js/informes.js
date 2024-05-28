@@ -1000,9 +1000,11 @@ $(".btnInformeCuarto").click(function(){
 	var materia = $(this).attr("mat");
 	var tabla = $(this).attr("tabla");
 	var periodo = $(this).attr("periodo");
+	var modalidad = $(this).attr("modalidad");
+
 	
 	
-	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia, "_blank");
+	window.open("extensiones/tcpdf/pdf/"+informe+".php?informe="+informe+"&tabla="+tabla+"&idCurso="+idCurso+"&periodo="+periodo+"&materia="+materia+"&modalidad="+modalidad, "_blank");
 	
 	})	
 
