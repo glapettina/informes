@@ -147,10 +147,10 @@ $(".tablas").on("click", ".btnEditarInformePrimero", function(){
 		var campo3 = 'evaluacion_edfisica'; 
 		var campo4 = 'observa_edfisica'; 
 
-		var id1 = '#aulicoEdfisica'; 
-		var id2 = '#comportamientoEdfisica'; 
-		var id3 = '#evaluacionEdfisica'; 
-		var id4 = '#observaEdfisica'; 
+		var id1 = '#aulicoEdFisica'; 
+		var id2 = '#comportamientoEdFisica'; 
+		var id3 = '#evaluacionEdFisica'; 
+		var id4 = '#observaEdFisica'; 
 		
 	}
 

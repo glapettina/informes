@@ -81,179 +81,222 @@ class imprimirReporte{
 
 		$idCurso = $_GET["idCurso"];
 
+		if ($_GET["materia"] == "Comunicación Oral y Escrita") {
+
+			$materia = "COMUNICACIÓN ORAL Y ESCRITA";
+			$campo1 = 'aulico_comunicacion';
+			$campo2 = 'comportamiento_comunicacion';
+			$campo3 = 'evaluacion_comunicacion';
+			$campo4 = 'observa_comunicacion';
+ 
+		}		
+
 		if ($_GET["materia"] == "Bromatología y Sistemas de Gestión de Calidad") {
 
 			$materia = "BROMATOLOGÍA Y SISTEMAS DE GESTIÓN DE CALIDAD";
-			$campo1 = 'concepto_bromatologia';
-			$campo2 = 'observa_bromatologia';
+			$campo1 = 'aulico_bromatologia';
+			$campo2 = 'comportamiento_bromatologia';
+			$campo3 = 'evaluacion_bromatologia';
+			$campo4 = 'observa_bromatologia';
+ 
  
 		}
 
-		if ($_GET["materia"] == "Comunicación Oral y Escrita") {
-
-		   $materia = "COMUNICACIÓN ORAL Y ESCRITA";
-		   $campo1 = 'concepto_comunicacion';
-		   $campo2 = 'observa_comunicacion';
-
-	   }					
+					
 
 	   if ($_GET["materia"] == "Educación Física") {
 
 			$materia = "EDUCACIÓN FÍSICA";
-			$campo1 = 'concepto_edfisica';
-			$campo2 = 'observa_edfisica';
-
+			$campo1 = 'aulico_edfisica';
+			$campo2 = 'comportamiento_edfisica';
+			$campo3 = 'evaluacion_edfisica';
+			$campo4 = 'observa_edfisica';
+ 
    		}
 		
 		if ($_GET["materia"] == "Inglés Técnico") {
 
-		   $materia = "INGLÉS TÉCNICO";
-		   $campo1 = 'concepto_ingles';
-		   $campo2 = 'observa_ingles';
+		    $materia = "INGLÉS TÉCNICO";
+		    $campo1 = 'aulico_itecnico';
+			$campo2 = 'comportamiento_itecnico';
+			$campo3 = 'evaluacion_itecnico';
+			$campo4 = 'observa_itecnico';
 
 	   }	
 
 	   if ($_GET["materia"] == "Matemática Aplicada") {
 
-		$materia = "MATEMÁTICA APLICADA";
-	    $campo1 = 'concepto_matematica';
-	    $campo2 = 'observa_matematica';
-
+			$materia = "MATEMÁTICA APLICADA";
+			$campo1 = 'aulico_maplicada';
+			$campo2 = 'comportamiento_maplicada';
+			$campo3 = 'evaluacion_maplicada';
+			$campo4 = 'observa_maplicada';
    		}	
 
 		if ($_GET["materia"] == "Microbiología y Toxicología de los Alimentos") {
 
-		   $materia = "MICROBIOLOGÍA Y TOXICOLOGÍA DE LOS ALIMENTOS";
-		   $campo1 = 'concepto_microbiologia';
-		   $campo2 = 'observa_microbiologia';
+			$materia = "MICROBIOLOGÍA Y TOXICOLOGÍA DE LOS ALIMENTOS";
+			$campo1 = 'aulico_toxicologia';
+			$campo2 = 'comportamiento_toxicologia';
+			$campo3 = 'evaluacion_toxicologia';
+			$campo4 = 'observa_toxicologia';
 
 	   }	
 
 	   if ($_GET["materia"] == "Nutrición") {
 
-		$materia = "NUTRICIÓN";
-	    $campo1 = 'concepto_nutricion';
-	    $campo2 = 'observa_nutricion';
+			$materia = "NUTRICIÓN";
+			$campo1 = 'aulico_nutricion';
+			$campo2 = 'comportamiento_nutricion';
+			$campo3 = 'evaluacion_nutricion';
+			$campo4 = 'observa_nutricion';
 
        }	
 
 	   if ($_GET["materia"] == "Organización y Gestión de la Producción") {
 
-		$materia = "ORGANIZACIÓN Y GESTIÓN DE LA PRODUCCIÓN";
-	    $campo1 = 'concepto_produccion';
-	    $campo2 = 'observa_produccion';
+			$materia = "ORGANIZACIÓN Y GESTIÓN DE LA PRODUCCIÓN";
+			$campo1 = 'aulico_oproduccion';
+			$campo2 = 'comportamiento_oproduccion';
+			$campo3 = 'evaluacion_oproduccion';
+			$campo4 = 'observa_oproduccion';
 
    	   }	
 
 		  if ($_GET["materia"] == "Prácticas Profesionalizantes") {
 
 			$materia = "PRÁCTICAS PROFESIONALIZANTES";
-		    $campo1 = 'concepto_practicas';
-		    $campo2 = 'observa_practicas';
+		    $campo1 = 'aulico_practicas';
+			$campo2 = 'comportamiento_practicas';
+			$campo3 = 'evaluacion_practicas';
+			$campo4 = 'observa_practicas';
 
 	   }	
 
 	   if ($_GET["materia"] == "Procesos y Equipos Industriales") {
 
-		$materia = "PROCESOS Y EQUIPOS INDUSTRIALES";
-	    $campo1 = 'concepto_procesos';
-	    $campo2 = 'observa_procesos';
+			$materia = "PROCESOS Y EQUIPOS INDUSTRIALES";
+			$campo1 = 'aulico_pindustriales';
+			$campo2 = 'comportamiento_pindustriales';
+			$campo3 = 'evaluacion_pindustriales';
+			$campo4 = 'observa_pindustriales';
 
        }	
 
 	   if ($_GET["materia"] == "Tecnología de los Alimentos") {
 
-	   $materia = "TECNOLOGÍA DE LOS ALIMENTOS";
-	   $campo1 = 'concepto_tecnologia';
-	   $campo2 = 'observa_tecnologia';
+			$materia = "TECNOLOGÍA DE LOS ALIMENTOS";
+			$campo1 = 'aulico_talimentos';
+			$campo2 = 'comportamiento_talimentos';
+			$campo3 = 'evaluacion_talimentos';
+			$campo4 = 'observa_talimentos';
 
        }
 	   
 	   if ($_GET["materia"] == "Equipos y Aparatos") {
 
-		$materia = "EQUIPOS Y APARATOS";
-	    $campo1 = 'concepto_equipos';
-	    $campo2 = 'observa_equipos';
+			$materia = "EQUIPOS Y APARATOS";
+			$campo1 = 'aulico_equipos';
+			$campo2 = 'comportamiento_equipos';
+			$campo3 = 'evaluacion_equipos';
+			$campo4 = 'observa_equipos';
 
   		}	
 
 		  if ($_GET["materia"] == "Instalaciones Eléctricas") {
 
 			$materia = "INSTALACIONES ELÉCTRICAS";
-			$campo1 = 'concepto_electricas';
-			$campo2 = 'observa_electricas';
+			$campo1 = 'aulico_electricas';
+			$campo2 = 'comportamiento_electricas';
+			$campo3 = 'evaluacion_electricas';
+			$campo4 = 'observa_electricas';
 	
 		}	
 
 		if ($_GET["materia"] == "Instalaciones Industriales") {
 
 			$materia = "INSTALACIONES INDUSTRIALES";
-			$campo1 = 'concepto_industriales';
-			$campo2 = 'observa_industriales';
+			$campo1 = 'aulico_industriales';
+			$campo2 = 'comportamiento_industriales';
+			$campo3 = 'evaluacion_industriales';
+			$campo4 = 'observa_industriales';
 	
 		}	
 
 		if ($_GET["materia"] == "Laboratorio de Ensayos Industriales") {
 
 			$materia = "LABORATORIO DE ENSAYOS INDUSTRIALES";
-			$campo1 = 'concepto_laboratorio';
-			$campo2 = 'observa_laboratorio';
-	
+			$campo1 = 'aulico_eindustriales';
+			$campo2 = 'comportamiento_eindustriales';
+			$campo3 = 'evaluacion_eindustriales';
+			$campo4 = 'observa_eindustriales';
 		}	
 
 		if ($_GET["materia"] == "Mantenimiento de Equipos") {
 
 			$materia = "MANTENIMIENTO DE EQUIPOS";
-			$campo1 = 'concepto_mantenimiento';
-			$campo2 = 'observa_mantenimiento';
+			$campo1 = 'aulico_mequipos';
+			$campo2 = 'comportamiento_mequipos';
+			$campo3 = 'evaluacion_mequipos';
+			$campo4 = 'observa_mequipos';
 	
 		}	
 
 		if ($_GET["materia"] == "Máquinas Eléctricas y Ensayos") {
 
 			$materia = "MÁQUINAS ELÉCTRICAS Y ENSAYOS";
-			$campo1 = 'concepto_ensayos';
-			$campo2 = 'observa_ensayos';
-	
+			$campo1 = 'aulico_ensayos';
+			$campo2 = 'comportamiento_ensayos';
+			$campo3 = 'evaluacion_ensayos';
+			$campo4 = 'observa_ensayos';
 		}	
 
 		if ($_GET["materia"] == "Máquinas Térmicas") {
 
 			$materia = "MÁQUINAS TÉRMICAS";
-			$campo1 = 'concepto_termicas';
-			$campo2 = 'observa_termicas';
+			$campo1 = 'aulico_termicas';
+			$campo2 = 'comportamiento_termicas';
+			$campo3 = 'evaluacion_termicas';
+			$campo4 = 'observa_termicas';
 	
 		}	
 
 		if ($_GET["materia"] == "Organización Industrial") {
 
 			$materia = "ORGANIZACIÓN INDUSTRIAL";
-			$campo1 = 'concepto_industrial';
-			$campo2 = 'observa_industrial';
-	
+			$campo1 = 'aulico_oindustrial';
+			$campo2 = 'comportamiento_oindustrial';
+			$campo3 = 'evaluacion_oindustrial';
+			$campo4 = 'observa_oindustrial';
 		}
 
 		if ($_GET["materia"] == "Prácticas Profesionalizantes") {
 
 			$materia = "PRÁCTICAS PROFESIONALIZANTES";
-			$campo1 = 'concepto_practicas';
-			$campo2 = 'observa_practicas';
+			$campo1 = 'aulico_practicas';
+			$campo2 = 'comportamiento_practicas';
+			$campo3 = 'evaluacion_practicas';
+			$campo4 = 'observa_practicas';
 	
 		}	
 
 		if ($_GET["materia"] == "Taller") {
 
 			$materia = "TALLER";
-			$campo1 = 'concepto_taller';
-			$campo2 = 'observa_taller';
+			$campo1 = 'aulico_taller';
+			$campo2 = 'comportamiento_taller';
+			$campo3 = 'evaluacion_taller';
+			$campo4 = 'observa_taller';
 	
 		}	
 
 		if ($_GET["materia"] == "Tecnología de Fabricación") {
 
 			$materia = "TECNOLOGÍA DE FABRICACIÓN";
-			$campo1 = 'concepto_fabricacion';
-			$campo2 = 'observa_fabricacion';
+			$campo1 = 'aulico_tfabricacion';
+			$campo2 = 'comportamiento_tfabricacion';
+			$campo3 = 'evaluacion_tfabricacion';
+			$campo4 = 'observa_tfabricacion';
 	
 		}	
 
@@ -375,7 +418,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "BROMATOLOGÍA Y SISTEMAS DE GESTIÓN DE CALIDAD";
 
-			$concepto = $value["concepto_bromatologia"];
+			$aulico = $value["aulico_bromatologia"];
+			$comportamiento = $value["comportamiento_bromatologia"];
+			$evaluacion = $value["evaluacion_bromatologia"];
 			$observa = $value["observa_bromatologia"];
 
 		}
@@ -384,7 +429,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "COMUNICACIÓN ORAL Y ESCRITA";
 
-			$concepto = $value["concepto_comunicacion"];
+			$aulico = $value["aulico_comunicacion"];
+			$comportamiento = $value["comportamiento_comunicacion"];
+			$evaluacion = $value["evaluacion_comunicacion"];
 			$observa = $value["observa_comunicacion"];
 
 		}		
@@ -393,17 +440,20 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "EDUCACIÓN FÍSICA";
 
-			$concepto = $value["concepto_edfisica"];
+			$aulico = $value["aulico_edfisica"];
+			$comportamiento = $value["comportamiento_edfisica"];
+			$evaluacion = $value["evaluacion_edfisica"];
 			$observa = $value["observa_edfisica"];
-
 		}
 
 		if ($_GET["materia"] == "Inglés Técnico") {
 
 			$materia = "INGLÉS TÉCNICO";
 
-			$concepto = $value["concepto_ingles"];
-			$observa = $value["observa_ingles"];
+			$$aulico = $value["aulico_itecnico"];
+			$comportamiento = $value["comportamiento_itecnico"];
+			$evaluacion = $value["evaluacion_itecnico"];
+			$observa = $value["observa_itecnico"];
 
 		}
 
@@ -411,8 +461,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MATEMÁTICA APLICADA";
 
-			$concepto = $value["concepto_matematica"];
-			$observa = $value["observa_matematica"];
+			$aulico = $value["aulico_maplicada"];
+			$comportamiento = $value["comportamiento_maplicada"];
+			$evaluacion = $value["evaluacion_maplicada"];
+			$observa = $value["observa_maplicada"];
 
 		}
 
@@ -420,8 +472,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MICROBIOLOGÍA Y TOXICOLOGÍA DE LOS ALIMENTOS";
 
-			$concepto = $value["concepto_microbiologia"];
-			$observa = $value["observa_microbiologia"];
+			$aulico = $value["aulico_toxicologia"];
+			$comportamiento = $value["comportamiento_toxicologia"];
+			$evaluacion = $value["evaluacion_toxicologia"];
+			$observa = $value["observa_toxicologia"];
 
 		}
 
@@ -429,7 +483,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "NUTRICIÓN";
 
-			$concepto = $value["concepto_nutricion"];
+			$aulico = $value["aulico_nutricion"];
+			$comportamiento = $value["comportamiento_nutricion"];
+			$evaluacion = $value["evaluacion_nutricion"];
 			$observa = $value["observa_nutricion"];
 
 		}
@@ -438,8 +494,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "ORGANIZACIÓN Y GESTIÓN DE LA PRODUCCIÓN";
 
-			$concepto = $value["concepto_produccion"];
-			$observa = $value["observa_produccion"];
+			$aulico = $value["aulico_oproduccion"];
+			$comportamiento = $value["comportamiento_oproduccion"];
+			$evaluacion = $value["evaluacion_oproduccion"];
+			$observa = $value["observa_oproduccion"];
 
 		}
 
@@ -447,7 +505,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "PRÁCTICAS PROFESIONALIZANTES";
 
-			$concepto = $value["concepto_practicas"];
+			$aulico = $value["aulico_practicas"];
+			$comportamiento = $value["comportamiento_practicas"];
+			$evaluacion = $value["evaluacion_practicas"];
 			$observa = $value["observa_practicas"];
 
 		}
@@ -457,8 +517,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "PROCESOS Y EQUIPOS INDUSTRIALES";
 
-			$concepto = $value["concepto_procesos"];
-			$observa = $value["observa_procesos"];
+			$aulico = $value["aulico_pindustriales"];
+			$comportamiento = $value["comportamiento_pindustriales"];
+			$evaluacion = $value["evaluacion_pindustriales"];
+			$observa = $value["observa_pindustriales"];
 
 		}
 
@@ -466,16 +528,19 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "TECNOLOGÍA DE LOS ALIMENTOS";
 
-			$concepto = $value["concepto_tecnologia"];
-			$observa = $value["observa_tecnologia"];
-
+			$aulico = $value["aulico_talimentos"];
+			$comportamiento = $value["comportamiento_talimentos"];
+			$evaluacion = $value["evaluacion_talimentos"];
+			$observa = $value["observa_talimentos"];
 		}
 
 		if ($_GET["materia"] == "Equipos y Aparatos") {
 
 			$materia = "EQUIPOS Y APARATOS";
 
-			$concepto = $value["concepto_equipos"];
+			$aulico = $value["aulico_equipos"];
+			$comportamiento = $value["comportamiento_equipos"];
+			$evaluacion = $value["evaluacion_equipos"];
 			$observa = $value["observa_equipos"];
 
 		}
@@ -484,7 +549,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "INSTALACIONES ELÉCTRICAS";
 
-			$concepto = $value["concepto_electricas"];
+			$aulico = $value["aulico_electricas"];
+			$comportamiento = $value["comportamiento_electricas"];
+			$evaluacion = $value["evaluacion_electricas"];
 			$observa = $value["observa_electricas"];
 
 		}
@@ -493,7 +560,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "INSTALACIONES INDUSTRIALES";
 
-			$concepto = $value["concepto_industriales"];
+			$aulico = $value["aulico_industriales"];
+			$comportamiento = $value["comportamiento_industriales"];
+			$evaluacion = $value["evaluacion_industriales"];
 			$observa = $value["observa_industriales"];
 
 		}
@@ -502,8 +571,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "LABORATORIO DE ENSAYOS INDUSTRIALES";
 
-			$concepto = $value["concepto_laboratorio"];
-			$observa = $value["observa_laboratorio"];
+			$aulico = $value["aulico_eindustriales"];
+			$comportamiento = $value["comportamiento_eindustriales"];
+			$evaluacion = $value["evaluacion_eindustriales"];
+			$observa = $value["observa_eindustriales"];
 
 		}
 
@@ -511,8 +582,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MANTENIMIENTO DE EQUIPOS";
 
-			$concepto = $value["concepto_mantenimiento"];
-			$observa = $value["observa_mantenimiento"];
+			$aulico = $value["aulico_mequipos"];
+			$comportamiento = $value["comportamiento_mequipos"];
+			$evaluacion = $value["evaluacion_mequipos"];
+			$observa = $value["observa_mequipos"];
 
 		}
 
@@ -520,7 +593,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MÁQUINAS ELÉCTRICAS Y ENSAYOS";
 
-			$concepto = $value["concepto_ensayos"];
+			$aulico = $value["aulico_ensayos"];
+			$comportamiento = $value["comportamiento_ensayos"];
+			$evaluacion = $value["evaluacion_ensayos"];
 			$observa = $value["observa_ensayos"];
 
 		}
@@ -529,7 +604,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "MÁQUINAS TÉRMICAS";
 
-			$concepto = $value["concepto_termicas"];
+			$aulico = $value["aulico_termicas"];
+			$comportamiento = $value["comportamiento_termicas"];
+			$evaluacion = $value["evaluacion_termicas"];
 			$observa = $value["observa_termicas"];
 
 		}
@@ -538,8 +615,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "ORGANIZACIÓN INDUSTRIAL";
 
-			$concepto = $value["concepto_industrial"];
-			$observa = $value["observa_industrial"];
+			$aulico = $value["aulico_oindustrial"];
+			$comportamiento = $value["comportamiento_oindustrial"];
+			$evaluacion = $value["evaluacion_oindustrial"];
+			$observa = $value["observa_oindustrial"];
 
 		}
 
@@ -547,7 +626,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "PRÁCTICAS PROFESIONALIZANTES";
 
-			$concepto = $value["concepto_practicas"];
+			$aulico = $value["aulico_practicas"];
+			$comportamiento = $value["comportamiento_practicas"];
+			$evaluacion = $value["evaluacion_practicas"];
 			$observa = $value["observa_practicas"];
 
 		}
@@ -557,7 +638,9 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "TALLER";
 
-			$concepto = $value["concepto_taller"];
+			$aulico = $value["aulico_taller"];
+			$comportamiento = $value["comportamiento_taller"];
+			$evaluacion = $value["evaluacion_taller"];
 			$observa = $value["observa_taller"];
 
 		}
@@ -566,8 +649,10 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "TECNOLOGÍA DE FABRICACIÓN";
 
-			$concepto = $value["concepto_fabricacion"];
-			$observa = $value["observa_fabricacion"];
+			$aulico = $value["aulico_tfabricacion"];
+			$comportamiento = $value["comportamiento_tfabricacion"];
+			$evaluacion = $value["evaluacion_tfabricacion"];
+			$observa = $value["observa_tfabricacion"];
 
 		}
 
@@ -705,39 +790,56 @@ $bloque5 = <<<EOF
 
 		
 
-		<tr>
+				<tr>
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:180px">
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:180px">
 
-				<br>
+					<br>
 
-				ESPACIO CURRICULAR
-
-
-			</td>
+					ESPACIO CURRICULAR
 
 
+				</td>
 
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:165px">
-
-				<br>
-
-				CONCEPTO
 
 
-			</td>
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:435px">
+					<br>
 
-				<br>
-
-				OBSERVACIONES
-
-			</td>	
+					TRABAJO AÚLICO
 
 
-		</tr>
+				</td>
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+					<br>
+
+					COMPORTAMIENTO
+
+
+				</td>
+
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:100px">
+
+					<br>
+
+					EVALUACIÓN
+
+
+				</td>
+
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:300px">
+
+					<br>
+
+					OBSERVACIONES
+
+				</td>	
+
+
+			</tr>
 
 	</table>
 
@@ -759,37 +861,53 @@ $bloque6 = <<<EOF
 
 		
 
-		<tr>
+					<tr>
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:white; width:180px">
+					<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:white; width:180px">
 
-				<br>
+						<br>
 
-				$materia
-
-
-			</td>
+						$materia
 
 
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:165px">
-
-				<br>
-
-				$concepto
-
-			</td>
-
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:435px">
-
-				<br>
-
-				$observa
+					</td>
 
 
-			</td>
 
-		</tr>
+					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+						<br>
+
+						$aulico
+
+					</td>
+
+					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+						<br>
+
+						$comportamiento
+
+					</td>
+
+					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+						<br>
+
+						$evaluacion
+
+					</td>
+
+					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:300px">
+
+						<br>
+
+						$observa
+
+
+					</td>
+
+			</tr>
 
 		<tr>
 

@@ -58,7 +58,7 @@
                     
                       echo '<div class="box-header with-border">                                      
 
-                        <button class="btn btn-primary btnInformeSexto" mat="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=3 tabla="quinto" informe="informe-curso-sexto">
+                        <button class="btn btn-primary btnInformeSexto" materia="'.$ma.'" curso="'.$mate['curso_id'].'" periodo="'.$_SESSION['periodo'].'" idCurso=23 modalidad="superiora" tabla="sexto" informe="informe-curso-sexto">
                           
                           Informes Curso
                         </button>
@@ -411,7 +411,7 @@
                       $campo4 = 'observa_tfabricacion';
                     } 
 
-                    if ($mat == 'Bromatología y Sistemas de Gestión Calidad') {
+                    if ($mat == 'Bromatología y Sistemas de Gestión de Calidad') {
                     
                       $aulico = 'aulicoBromatologia';
                       $comportamiento = 'comportamientoBromatologia';
