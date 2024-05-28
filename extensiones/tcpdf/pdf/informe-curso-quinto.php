@@ -11,6 +11,7 @@ class imprimirReporte{
 
 
 	public $idCurso;
+	public $modalidad;
 
 	public function traerImpresionReporte(){
 
@@ -72,6 +73,7 @@ class imprimirReporte{
 		$respuestaInforme = ControladorInformes::ctrMostrarInformes($itemInforme, $valorInforme, $tablaInforme, $periodo, $verifica);
 
 		$idCurso = $_GET["idCurso"];
+		$modalidad = $_GET["modalidad"];
 
 		if ($_GET["materia"] == "Análisis Matemático") {
 
@@ -379,7 +381,7 @@ $bloque2 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:780px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:760px">
 
 				<br>
 
@@ -664,36 +666,46 @@ $bloque3 = <<<EOF
 
 		
 
-		<tr>
+				<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:260px">
+				<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:330px">
+
+					<br>
+
+					Estudiante
+
+
+				</td>
+
+				<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
+
+					<br>
+
+					Agrupamiento
+
+
+				</td>		
+
+				<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
+
+					<br>
+
+					Turno
+
+
+				</td>			
+
+				<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:144px">
 
 				<br>
 
-				Estudiante
-
-
-			</td>
-
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:260px">
-
-				<br>
-
-				Agrupamiento
-
-
-			</td>		
-
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:260px">
-
-				<br>
-
-				Turno
+				Orientación
 
 
 			</td>			
 
-		</tr>
+
+			</tr>
 
 	</table>
 
@@ -719,7 +731,7 @@ $bloque4 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:260px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:330px">
 
 				<br>
 
@@ -730,7 +742,7 @@ $bloque4 = <<<EOF
 
 
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:260px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -739,7 +751,7 @@ $bloque4 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:260px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -747,6 +759,15 @@ $bloque4 = <<<EOF
 
 
 			</td>
+
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:144px">
+
+			<br>
+
+				$modalidad
+
+
+		</td>
 
 
 		</tr>
@@ -812,7 +833,7 @@ $bloque5 = <<<EOF
 
 			</td>
 
-			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:300px">
+			<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:280px">
 
 				<br>
 
@@ -880,7 +901,7 @@ $bloque6 = <<<EOF
 
 			</td>
 
-			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:300px">
+			<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:280px">
 
 				<br>
 
