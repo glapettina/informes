@@ -158,8 +158,8 @@ class imprimirReporte{
 
 	  if ($_GET["materia"] == "Lengua y Literatura") {
 
-				$materia = "LENGUA Y LITERATURA";
-				$campo1 = 'aulico_lengua';
+				 $materia = "LENGUA Y LITERATURA";
+				 $campo1 = 'aulico_lengua';
 				 $campo2 = 'comportamiento_lengua';
 				 $campo3 = 'evaluacion_lengua';
 				 $campo4 = 'observa_lengua';
@@ -326,7 +326,7 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "DIBUJO TÉCNICO";
 
-			$$aulico = $value["aulico_dibujo"];
+			$aulico = $value["aulico_dibujo"];
 			$comportamiento = $value["comportamiento_dibujo"];
 			$evaluacion = $value["evaluacion_dibujo"];
 			$observa = $value["observa_dibujo"];
