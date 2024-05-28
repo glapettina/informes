@@ -385,7 +385,7 @@ $bloque2 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:780px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:760px">
 
 				<br>
 
@@ -666,7 +666,7 @@ $bloque3 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:280px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:330px">
 
 				<br>
 
@@ -675,7 +675,7 @@ $bloque3 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:150px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
 
 				<br>
 
@@ -684,7 +684,7 @@ $bloque3 = <<<EOF
 
 			</td>		
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:150px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:143px">
 
 				<br>
 
@@ -693,7 +693,7 @@ $bloque3 = <<<EOF
 
 			</td>			
 
-			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:200px">
+			<td style="text-align: center; border: 1px solid #666; background-color:#C2BDBC;; width:144px">
 
 				<br>
 
@@ -728,7 +728,7 @@ $bloque4 = <<<EOF
 
 		<tr>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:280px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:330px">
 
 				<br>
 
@@ -739,7 +739,7 @@ $bloque4 = <<<EOF
 
 
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:150px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -748,7 +748,7 @@ $bloque4 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:150px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:143px">
 
 				<br>
 
@@ -757,7 +757,7 @@ $bloque4 = <<<EOF
 
 			</td>
 
-			<td style="text-align: center; border: 1px solid #666; background-color:white; width:200px">
+			<td style="text-align: center; border: 1px solid #666; background-color:white; width:144px">
 
 				<br>
 
@@ -830,7 +830,7 @@ $bloque5 = <<<EOF
 
 				</td>
 
-				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:300px">
+				<td style="font-size: 7px; text-align: center; border: 1px solid #666; background-color:#C2BDBC; width:280px">
 
 					<br>
 
@@ -898,7 +898,7 @@ $bloque6 = <<<EOF
 
 					</td>
 
-					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:300px">
+					<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:280px">
 
 						<br>
 
