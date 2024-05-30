@@ -70,17 +70,17 @@ $pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
 
 
 $pdf->setPrintHeader(false); //Ahora si imprimirá cabecera
-$pdf->setPrintFooter(true); //Ahora si imprimirá pie de página
+$pdf->setPrintFooter(false); //Ahora si imprimirá pie de página
 
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+//$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set margins
 $pdf->SetMargins(PDF_MARGIN_LEFT, 10, PDF_MARGIN_RIGHT);
 $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+//$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 //$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
@@ -98,7 +98,7 @@ $bloque1 = <<<EOF
 
 		<tr>
 
-			<td style="width: 760px"><img src="images/header2.png"></td>
+			<td style="width: 700px"><img src="images/header2.png"></td>
 
 			
 			
@@ -121,7 +121,7 @@ $bloque2 = <<<EOF
 
 		<tr>
 
-			<td style="width:530px"><img src="images/backFact2.jpg"></td>
+			<td style="width:700px"><img src="images/backFact2.jpg"></td>
 
 		</tr>
 

@@ -74,7 +74,7 @@ $pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
 
 
 $pdf->setPrintHeader(false); //Ahora si imprimirá cabecera
-$pdf->setPrintFooter(true); //Ahora si imprimirá pie de página
+$pdf->setPrintFooter(false); //Ahora si imprimirá pie de página
 
 
 // set header and footer fonts

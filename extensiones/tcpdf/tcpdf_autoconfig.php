@@ -153,7 +153,7 @@ if (!defined('PDF_HEADER_STRING')) {
 }
 
 if (!defined('PDF_UNIT')) {
-	define ('PDF_UNIT', 'mm');
+	define ('PDF_UNIT', 'px');
 }
 
 if (!defined('PDF_MARGIN_HEADER')) {
@@ -161,7 +161,7 @@ if (!defined('PDF_MARGIN_HEADER')) {
 }
 
 if (!defined('PDF_MARGIN_FOOTER')) {
-	define ('PDF_MARGIN_FOOTER', 10);
+	define ('PDF_MARGIN_FOOTER', 5);
 }
 
 if (!defined('PDF_MARGIN_TOP')) {
