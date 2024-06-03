@@ -48,7 +48,7 @@
 								echo '<li>
 									<a href='.$value['enlace'].'>
 
-										<i class="fa fa-users"></i>
+										<i class="'.$value['icono'].'"></i>
 										<span>'.$value['nombre'].'</span>
 
 									</a>
