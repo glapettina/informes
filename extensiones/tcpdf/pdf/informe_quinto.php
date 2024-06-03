@@ -1503,6 +1503,71 @@ $bloque11 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
+	<tr>
+
+		<td style="font-size: 7px; text-align: left; border: 1px solid #666; background-color:white; width:180px">
+
+			<br>
+
+			ELECTROTECNIA
+
+
+		</td>
+
+
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[aulico_electrotecnia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[comportamiento_electrotecnia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: center; border: 1px solid #666; background-color:white; width:100px">
+
+			<br>
+
+			$respuestaInforme[evaluacion_electrotecnia]
+
+		</td>
+
+		<td style="font-size: 8px; text-align: justify; border: 1px solid #666; background-color:white; width:280px">
+
+			<br>
+
+			$respuestaInforme[observa_electrotecnia]
+
+		</td>	
+
+
+
+	</tr>
+
+</table>
+
+EOF;
+
+
+$pdf->writeHTML($bloque11, false, false, false, false, '');
+
+//--------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+
+
+$bloque12 = <<<EOF
+
+<table style="font-size:10px; padding:5px 10px;">
+
 
 
 	
@@ -1561,14 +1626,14 @@ $bloque11 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque11, false, false, false, false, '');
+$pdf->writeHTML($bloque12, false, false, false, false, '');
 
 //--------------------------------------------------------
 
 //----------------------------------------------------------------------------------
 
 
-$bloque12 = <<<EOF
+$bloque13 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1631,14 +1696,14 @@ $bloque12 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque12, false, false, false, false, '');
+$pdf->writeHTML($bloque13, false, false, false, false, '');
 
 //--------------------------------------------------------
 
 //----------------------------------------------------------------------------------
 
 
-$bloque13 = <<<EOF
+$bloque14 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1701,14 +1766,14 @@ $bloque13 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque13, false, false, false, false, '');
+$pdf->writeHTML($bloque14, false, false, false, false, '');
 
 //--------------------------------------------------------
 
 //----------------------------------------------------------------------------------
 
 
-$bloque14 = <<<EOF
+$bloque15 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1771,14 +1836,14 @@ $bloque14 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque14, false, false, false, false, '');
+$pdf->writeHTML($bloque15, false, false, false, false, '');
 
 //--------------------------------------------------------
 
 //----------------------------------------------------------------------------------
 
 
-$bloque15 = <<<EOF
+$bloque16 = <<<EOF
 
 <table style="font-size:10px; padding:5px 10px;">
 
@@ -1841,7 +1906,7 @@ $bloque15 = <<<EOF
 EOF;
 
 
-$pdf->writeHTML($bloque15, false, false, false, false, '');
+$pdf->writeHTML($bloque16, false, false, false, false, '');
 
 //--------------------------------------------------------
 
