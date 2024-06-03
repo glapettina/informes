@@ -112,6 +112,7 @@
           $_GET["ruta"] == "cursos" ||
           $_GET["ruta"] == "materias" ||
           $_GET["ruta"] == "ciudades" ||
+          $_GET["ruta"] == "periodos" ||
           $_GET["ruta"] == "primero" ||
           $_GET["ruta"] == "segundo" ||
           $_GET["ruta"] == "tercero" ||
@@ -192,6 +193,7 @@
 <script src="vistas/js/servicios.js"></script>
 <script src="vistas/js/informes.js"></script>
 <script src="vistas/js/materias.js"></script>
+<script src="vistas/js/periodos.js"></script>
 
 
 <!--CAMPO FECHA - DATEPICKER-->

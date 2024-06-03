@@ -11,6 +11,7 @@
 	require_once "controladores/informes.controlador.php";
 	require_once "controladores/menu.controlador.php";
 	require_once "controladores/materias.controlador.php";
+	require_once "controladores/periodos.controlador.php";
 
 	require_once "modelos/usuarios.modelo.php";
 	require_once "modelos/cursos.modelo.php";
@@ -22,6 +23,7 @@
 	require_once "modelos/informes.modelo.php";
 	require_once "modelos/menu.modelo.php";
 	require_once "modelos/materias.modelo.php";
+	require_once "modelos/periodos.modelo.php";
 
 	$plantilla = new ControladorPlantilla();
 	$plantilla -> ctrPlantilla();
