@@ -340,7 +340,7 @@ foreach ($respuestaInforme as $key => $value) {
 
 			$materia = "DIBUJO TÉCNICO";
 
-			$$aulico = $value["aulico_dibujo"];
+			$aulico = $value["aulico_dibujo"];
 			$comportamiento = $value["comportamiento_dibujo"];
 			$evaluacion = $value["evaluacion_dibujo"];
 			$observa = $value["observa_dibujo"];
